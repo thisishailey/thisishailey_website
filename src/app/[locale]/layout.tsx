@@ -1,36 +1,44 @@
 import '@/styles/globals.css';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import favicon from '@/assets/favicon.ico';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
 import { locales } from '../../../intl.config';
+import type { Params } from '@/types/param';
 import Header from '@/components/common/header';
-
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-    title: 'Hailey Kim • FE Developer',
-    description: "Hi! I'm Hailey Kim, a front-end developer.",
-};
+import Footer from '@/components/common/footer';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
 }
 
-interface Props {
-    params: { locale: string };
+export async function generateMetadata({ params: { locale } }: Params) {
+    const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+    return {
+        title: t('title'),
+        description: t('description'),
+    };
+}
+
+interface Props extends Params {
     children: React.ReactNode;
 }
 
-export default function HomeLayout({ children, params: { locale } }: Props) {
+const inter = Inter({ subsets: ['latin'] });
+
+export default function RootLayout({ children, params: { locale } }: Props) {
     unstable_setRequestLocale(locale);
+    const tFooter = useTranslations('Footer');
+
     return (
         <html lang={locale}>
             <link rel="icon" href={favicon.src} type="image/x-icon" />
             <body className={inter.className}>
                 <Header />
                 {children}
+                <Footer t={tFooter} />
             </body>
         </html>
     );

@@ -1,6 +1,14 @@
-{
+{	
+	"Metadata": {
+		"title": "Hailey Kim | FE Developer",
+    	"description": "Hi! I'm Hailey Kim, a front-end developer."
+	},
 	"Home": {
-		"title": "Hi! I'm Hailey Kim.",
+		"title1": "Hi!",
+		"title2": "I'm Hailey Kim.",
 		"subtitle": "I'm a front-end developer."
+	},
+	"Footer": {
+		"copyright": "© Hailey Kim {year}"
 	}
 }
