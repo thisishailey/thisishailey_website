@@ -18,7 +18,7 @@ export default function AuroraBackground({
         <main>
             <div
                 className={cn(
-                    'relative flex flex-col  h-[100vh] items-center justify-center bg-zinc-50 dark:bg-zinc-900  text-slate-950 transition-bg',
+                    'relative flex flex-col h-[100vh] items-center justify-center bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg',
                     className
                 )}
                 {...props}
@@ -55,7 +55,7 @@ export default function AuroraBackground({
                         duration: 0.8,
                         ease: 'easeInOut',
                     }}
-                    className="relative flex flex-col gap-4 items-center justify-center px-4"
+                    className="relative flex flex-col gap-8 items-center justify-center px-4"
                 >
                     {children}
                 </motion.div>

@@ -1,64 +1,31 @@
-'use client';
-
-import { useState } from 'react';
-import { HoveredLink, Menu, MenuItem } from '../ui/navbar-menu';
-import { cn } from '@/utils/cn';
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/assets/logo/long-light.png';
 
 export default function Header() {
     return (
-        <header className="relative w-full flex items-center justify-center">
-            <Navbar className="top-2" />
+        <header className="fixed top-2 inset-x-0 max-w-6xl mx-auto px-4 z-50">
+            <nav className="relative rounded-full border border-transparent dark:bg-[--theme-dark] dark:border-white/[0.2] bg-white shadow-md flex justify-between px-10 py-4">
+                <Link href={'/'} className="relative h-10 w-[100px]">
+                    <Image src={logo.src} alt="Home" width={100} height={40} />
+                </Link>
+                <button>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                        />
+                    </svg>
+                </button>
+            </nav>
         </header>
-    );
-}
-
-function Navbar({ className }: { className?: string }) {
-    const [active, setActive] = useState<string | null>(null);
-    return (
-        <div
-            className={cn(
-                'fixed top-10 inset-x-0 max-w-6xl mx-auto px-4 z-50',
-                className
-            )}
-        >
-            <Menu setActive={setActive}>
-                <MenuItem setActive={setActive} active={active} item="Services">
-                    <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/web-dev">
-                            Web Development
-                        </HoveredLink>
-                        <HoveredLink href="/interface-design">
-                            Interface Design
-                        </HoveredLink>
-                        <HoveredLink href="/seo">
-                            Search Engine Optimization
-                        </HoveredLink>
-                        <HoveredLink href="/branding">Branding</HoveredLink>
-                    </div>
-                </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Products">
-                    <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-                        <HoveredLink href="/web-dev">
-                            Web Development
-                        </HoveredLink>
-                        <HoveredLink href="/interface-design">
-                            Interface Design
-                        </HoveredLink>
-                        <HoveredLink href="/seo">
-                            Search Engine Optimization
-                        </HoveredLink>
-                        <HoveredLink href="/branding">Branding</HoveredLink>
-                    </div>
-                </MenuItem>
-                <MenuItem setActive={setActive} active={active} item="Pricing">
-                    <div className="flex flex-col space-y-4 text-sm">
-                        <HoveredLink href="/hobby">Hobby</HoveredLink>
-                        <HoveredLink href="/individual">Individual</HoveredLink>
-                        <HoveredLink href="/team">Team</HoveredLink>
-                        <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-                    </div>
-                </MenuItem>
-            </Menu>
-        </div>
     );
 }

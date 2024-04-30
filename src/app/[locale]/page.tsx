@@ -18,8 +18,12 @@ export default function Home({ params: { locale } }: Params) {
 
     return (
         <AuroraBackground>
-            <h1 className="mt-20 w-72 mx-auto">{t('title1')}</h1>
-            <h2 className="w-72 mx-auto">{t('title2')}</h2>
+            <h1 className="w-max mx-auto text-[--theme-dark] text-6xl font-semibold">
+                {t('title1')}
+            </h1>
+            <h2 className="w-max mx-auto text-[--theme-dark] text-6xl font-semibold">
+                {t('title2')}
+            </h2>
             <TypewriterEffect words={words} />
         </AuroraBackground>
     );
