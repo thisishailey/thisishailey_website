@@ -4,18 +4,14 @@ import { useEffect } from 'react';
 import { motion, stagger, useAnimate, useInView } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
-export default function TypewriterEffect({
-    words,
-    className,
-    cursorClassName,
-}: {
+interface TypewriterEffectProps {
     words: {
         text: string;
         className?: string;
     }[];
-    className?: string;
-    cursorClassName?: string;
-}) {
+}
+
+export default function TypewriterEffect({ words }: TypewriterEffectProps) {
     const wordsArray = words.map((word) => {
         return {
             ...word,
@@ -57,7 +53,7 @@ export default function TypewriterEffect({
                                     initial={{}}
                                     key={`char-${index}`}
                                     className={cn(
-                                        `dark:text-white text-[--theme-dark] opacity-0 hidden`,
+                                        `text-theme-dark dark:text-theme-light opacity-0 hidden`,
                                         word.className
                                     )}
                                 >
@@ -74,10 +70,9 @@ export default function TypewriterEffect({
 
     return (
         <div
-            className={cn(
-                'text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center',
-                className
-            )}
+            className={
+                'text-3xl sm:text-4xl lg:text-5xl font-medium text-center'
+            }
         >
             {renderWords()}
             <motion.span
@@ -92,10 +87,9 @@ export default function TypewriterEffect({
                     repeat: Infinity,
                     repeatType: 'reverse',
                 }}
-                className={cn(
-                    'inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-[--theme]',
-                    cursorClassName
-                )}
+                className={
+                    'inline-block relative top-1.5 rounded-sm w-1 h-8 sm:h-10 lg:h-12 bg-theme'
+                }
             ></motion.span>
         </div>
     );

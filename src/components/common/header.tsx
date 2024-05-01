@@ -5,9 +5,15 @@ import logo from '@/assets/logo/long-light.png';
 export default function Header() {
     return (
         <header className="fixed top-2 inset-x-0 max-w-6xl mx-auto px-4 z-50">
-            <nav className="relative rounded-full border border-transparent dark:bg-[--theme-dark] dark:border-white/[0.2] bg-white shadow-md flex justify-between px-10 py-4">
+            <nav className="relative rounded-full border border-transparent bg-theme-light dark:bg-theme-dark dark:border-theme-light/[0.2] shadow-md flex justify-between px-10 py-4">
                 <Link href={'/'} className="relative h-10 w-[100px]">
-                    <Image src={logo.src} alt="Home" width={100} height={40} />
+                    <Image
+                        src={logo.src}
+                        alt="Home"
+                        width={100}
+                        height={40}
+                        priority
+                    />
                 </Link>
                 <button>
                     <svg

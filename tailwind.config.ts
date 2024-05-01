@@ -9,6 +9,16 @@ module.exports = {
             animation: {
                 aurora: 'aurora 60s linear infinite',
             },
+            colors: {
+                theme: {
+                    DEFAULT: '#9290C3',
+                    light: '#ffffff',
+                    dark: '#292929',
+                },
+            },
+            fontFamily: {
+                korean: 'Wave-Regular',
+            },
             keyframes: {
                 aurora: {
                     from: {
@@ -26,14 +36,6 @@ module.exports = {
 
 function addVariablesForColors({ addBase, theme }: any) {
     let allColors = flattenColorPalette(theme('colors'));
-    const customColors = {
-        'theme-light': '#ffffff',
-        'theme-dark': '#292929',
-        theme: '#9290C3',
-    };
-
-    Object.assign(allColors, customColors);
-
     let newVars = Object.fromEntries(
         Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
     );

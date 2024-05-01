@@ -4,9 +4,10 @@
     	"description": "Hi! I'm Hailey Kim, a front-end developer."
 	},
 	"Home": {
-		"title1": "Hi!",
-		"title2": "I'm Hailey Kim.",
-		"subtitle": "I'm a front-end developer."
+		"subtitle": "FE Developer",
+		"title": "Hailey Kim",
+		"description": "I'm a front-end developer.",
+		"download": "Download CV"
 	},
 	"Footer": {
 		"copyright": "© Hailey Kim {year}"
