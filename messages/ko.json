@@ -3,13 +3,19 @@
 		"title": "김혜원 | 프론트엔드 개발자",
     	"description": "안녕하세요! 프론트엔드 개발자 김혜원입니다."
 	},
+	"Header":{
+		"about": "소개",
+		"skill": "기술 스택",
+		"project": "프로젝트",
+		"contact": "연락처"
+	},
+	"Footer": {
+		"copyright": "© 김혜원 {year}"
+	},
 	"Home": {
 		"subtitle": "프론트엔드 개발자",
 		"title": "김 혜 원",
 		"description": "다양한 웹/모바일 개발을 즐깁니다.",
 		"download": "이력서 다운로드"
-	},
-	"Footer": {
-		"copyright": "© 김혜원 {year}"
 	}
 }

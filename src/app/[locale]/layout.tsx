@@ -35,6 +35,7 @@ const ubuntu = Ubuntu({
 
 export default function RootLayout({ children, params: { locale } }: Props) {
     unstable_setRequestLocale(locale);
+    const tHeader = useTranslations('Header');
     const tFooter = useTranslations('Footer');
 
     return (
@@ -46,7 +47,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
                     'select-none cursor-none'
                 )}
             >
-                <Header />
+                <Header t={tHeader} />
                 {children}
                 <Cursor />
                 <Footer t={tFooter} />

@@ -1,26 +1,21 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import logo from '@/assets/logo/long-light.png';
-import { CloseIcon, MenuIcon } from '../ui/icons';
+import Logo from '../ui/logo';
+import Menu from '../ui/menu';
+import type { Translation } from '@/types/intl';
 
-export default function Header() {
+export default function Header({ t }: { t: Translation }) {
+    const menuItems = [
+        { text: t('about'), link: '/about' },
+        { text: t('skill'), link: '/skill' },
+        { text: t('project'), link: '/project' },
+        { text: t('contact'), link: '/contact' },
+    ];
+
     return (
-        <header className="fixed top-2 inset-x-0 max-w-6xl mx-auto px-4 z-40">
-            <nav className="relative rounded-full border border-transparent bg-theme-light dark:bg-theme-dark dark:border-theme-light/[0.2] shadow-md flex justify-between px-10 py-4">
-                <Link href={'/'} className="relative h-10 w-[100px]">
-                    <Image
-                        src={logo.src}
-                        alt="Home"
-                        width={100}
-                        height={40}
-                        priority
-                    />
-                </Link>
-                <button>
-                    <MenuIcon />
-                    {/* <CloseIcon /> */}
-                </button>
-            </nav>
+        <header className="fixed top-3 inset-x-0 max-w-6xl mx-auto z-40">
+            <div className="relative flex items-center justify-between mx-3 px-6 sm:px-10 py-2 sm:py-4 rounded-full shadow-inner shadow-theme/50 ring-2 ring-theme/25 bg-theme-light dark:bg-theme-dark border border-transparent dark:border-theme-light/[0.2]">
+                <Logo />
+                <Menu items={menuItems} />
+            </div>
         </header>
     );
 }

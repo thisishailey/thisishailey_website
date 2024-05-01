@@ -3,13 +3,19 @@
 		"title": "Hailey Kim | FE Developer",
     	"description": "Hi! I'm Hailey Kim, a front-end developer."
 	},
+	"Header":{
+		"about": "About",
+		"skill": "Skills",
+		"project": "Projects",
+		"contact": "Contact"
+	},
+	"Footer": {
+		"copyright": "© Hailey Kim {year}"
+	},
 	"Home": {
 		"subtitle": "FE Developer",
 		"title": "Hailey Kim",
 		"description": "I'm a front-end developer.",
 		"download": "Download CV"
-	},
-	"Footer": {
-		"copyright": "© Hailey Kim {year}"
 	}
 }

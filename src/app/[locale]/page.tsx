@@ -22,12 +22,12 @@ export default function Home({ params: { locale } }: Params) {
                 <h2 className="w-max mx-auto text-xl sm:text-2xl lg:text-3xl font-medium opacity-90 text-theme-dark dark:text-theme-light">
                     {t('subtitle')}
                 </h2>
-                <h1 className="w-max mx-auto text-7xl sm:text-8xl lg:text-9xl font-medium text-theme-dark dark:text-theme-light">
+                <h1 className="w-max mx-auto text-6xl sm:text-8xl lg:text-9xl font-medium text-theme-dark dark:text-theme-light">
                     {t('title')}
                 </h1>
             </div>
             <TypewriterEffect words={words} />
-            <button className="bg-theme text-theme-light dark:text-theme-dark rounded-full px-8 py-6 text-lg sm:text-xl lg:text-2xl">
+            <button className="bg-theme text-theme-light dark:text-theme-dark rounded-full px-6 sm:px-8 py-4 sm:py-6 text-lg sm:text-xl lg:text-2xl">
                 {t('download')}
             </button>
         </AuroraBackground>
