@@ -16,12 +16,30 @@ export default function Cursor() {
         cursorRef.current.style.top = y + 'px';
     };
 
+    const showCursor = () => {
+        if (!cursorRef.current) {
+            return;
+        }
+
+        cursorRef.current.classList.remove('hidden');
+    };
+
+    const hideCursor = () => {
+        if (!cursorRef.current) {
+            return;
+        }
+
+        cursorRef.current.classList.add('hidden');
+    };
+
     useEffect(() => {
         if (!window) {
             return;
         }
 
         window.addEventListener('mousemove', moveCursor);
+        document.addEventListener('mouseenter', showCursor);
+        document.addEventListener('mouseleave', hideCursor);
     }, []);
 
     return (
