@@ -5,8 +5,10 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { locales } from '../../../intl.config';
 import type { Params } from '@/types/param';
+import { cn } from '@/utils/cn';
 import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
+import Cursor from '@/components/common/cursor';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -39,10 +41,14 @@ export default function RootLayout({ children, params: { locale } }: Props) {
         <html lang={locale}>
             <link rel="icon" href={favicon.src} type="image/x-icon" />
             <body
-                className={locale === 'en' ? ubuntu.className : 'font-korean'}
+                className={cn(
+                    locale === 'en' ? ubuntu.className : 'font-korean',
+                    'select-none cursor-none'
+                )}
             >
                 <Header />
                 {children}
+                <Cursor />
                 <Footer t={tFooter} />
             </body>
         </html>
