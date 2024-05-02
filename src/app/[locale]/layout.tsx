@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 import { Ubuntu } from 'next/font/google';
-import favicon from '@/assets/favicon.ico';
+import favicon from '../../../public/favicon.ico';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import { locales } from '../../../intl.config';

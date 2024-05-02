@@ -14,7 +14,9 @@ export default function Menu({ items }: MenuProps) {
         <motion.nav
             initial={false}
             animate={isOpen ? 'open' : 'closed'}
-            className="w-6 h-6 mt-1"
+            className="w-12 h-12 p-3 mt-1"
+            onMouseOver={CursorToPointer}
+            onMouseLeave={CursorToNormal}
         >
             <ToggleButton onClick={() => toggleMenu()} />
         </motion.nav>
@@ -22,11 +24,7 @@ export default function Menu({ items }: MenuProps) {
 }
 
 const ToggleButton = ({ onClick }: { onClick: () => void }) => (
-    <button
-        onClick={onClick}
-        onMouseOver={CursorToPointer}
-        onMouseLeave={CursorToNormal}
-    >
+    <button onClick={onClick} className="text-theme-dark dark:text-theme-light">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

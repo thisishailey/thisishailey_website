@@ -13,7 +13,7 @@ export default function DownloadCV({ text }: { text: string }) {
                 duration: 0.8,
                 ease: 'easeInOut',
             }}
-            className="mt-8 px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg bg-theme text-theme-light dark:text-theme-dark font-light text-lg sm:text-xl"
+            className="mt-8 px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg bg-theme text-theme-light font-light text-lg sm:text-xl"
             onMouseOver={CursorToPointer}
             onMouseLeave={CursorToNormal}
         >
