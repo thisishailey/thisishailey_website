@@ -1,13 +1,13 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { animate, motion, useCycle } from 'framer-motion';
 import { CursorToNormal, CursorToPointer } from '../common/cursor';
-import Link from 'next/link';
-import { useEffect, useState, useTransition } from 'react';
 import { LanguageIcon, MoonIcon, SunIcon } from './icons';
-import { useLocale } from 'next-intl';
 import { cn } from '@/utils/cn';
-import { usePathname, useRouter } from 'next/navigation';
 
 interface MenuProps {
     localeValues: {
@@ -17,24 +17,18 @@ interface MenuProps {
 }
 
 export const Menu = ({ localeValues }: MenuProps) => {
-    const [isOpen, toggleMenu] = useCycle(false, true);
-    const [isDark, setIsDark] = useState(false);
+    const { replace } = useRouter();
     const locale = useLocale();
     const pathname = usePathname();
-    const { replace } = useRouter();
-    const [isPending, startTransition] = useTransition();
+    const [isOpen, toggleMenu] = useCycle(false, true);
+    const [showLocale, setShowLocale] = useState(false);
+    const [isDark, setIsDark] = useState(false);
 
-    useEffect(() => {
-        const isDark = document.documentElement.classList.contains('dark');
-        setIsDark(isDark);
-    }, []);
+    const toggleLocale = () => {
+        if (!showLocale) {
+            return setShowLocale(true);
+        }
 
-    const toggleDarkMode = () => {
-        document.documentElement.classList.toggle('dark');
-        setIsDark(!isDark);
-    };
-
-    const toggleLanguage = () => {
         const pathArr = pathname.split('/');
 
         if (locale === 'en') {
@@ -45,6 +39,16 @@ export const Menu = ({ localeValues }: MenuProps) => {
 
         const href = pathArr.join('/');
         replace(href);
+    };
+
+    useEffect(() => {
+        const isDark = document.documentElement.classList.contains('dark');
+        setIsDark(isDark);
+    }, []);
+
+    const toggleDarkMode = () => {
+        document.documentElement.classList.toggle('dark');
+        setIsDark(!isDark);
     };
 
     useEffect(() => {
@@ -81,33 +85,67 @@ export const Menu = ({ localeValues }: MenuProps) => {
     }, [isOpen]);
 
     return (
-        <div className="flex gap-5 sm:gap-10">
-            <motion.button
-                className={
-                    'w-12 h-12 p-3 text-theme-dark dark:text-theme-light'
-                }
-                initial={{ opacity: 0 }}
-                animate={isOpen ? 'open' : 'closed'}
-                variants={{
-                    closed: {
-                        scale: 0.5,
-                        opacity: 0,
-                        transition: { delay: 0.1, duration: 0.4 },
-                    },
-                    open: {
-                        scale: 1,
-                        opacity: 1,
-                        transition: { delay: 0.1, duration: 0.4 },
-                    },
-                }}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.6 }}
-                onClick={toggleLanguage}
-                onMouseOver={CursorToPointer}
-                onMouseLeave={CursorToNormal}
-            >
-                <LanguageIcon />
-            </motion.button>
+        <div className="flex gap-2 xs:gap-5 sm:gap-10">
+            {showLocale ? (
+                <motion.button
+                    className="flex items-center justify-between rounded-full border border-theme-dark/60 dark:border-theme-light/60 text-theme-dark dark:text-theme-light"
+                    animate={{ x: [10, 0] }}
+                    transition={{ duration: 0.5, type: 'spring' }}
+                    onMouseOver={CursorToPointer}
+                    onMouseLeave={CursorToNormal}
+                >
+                    <div
+                        className={cn(
+                            'p-3 pl-5 pr-2',
+                            locale === 'en' && 'text-theme font-semibold'
+                        )}
+                        onClick={locale === 'ko' ? toggleLocale : undefined}
+                    >
+                        {localeValues.en.toUpperCase()}
+                    </div>
+                    <span className="w-1 h-6 border-r border-theme-dark/60 dark:border-theme-light/60"></span>
+                    <div
+                        className={cn(
+                            'p-3',
+                            locale === 'ko' && 'text-theme font-semibold'
+                        )}
+                        onClick={locale === 'en' ? toggleLocale : undefined}
+                    >
+                        {localeValues.ko.toUpperCase()}
+                    </div>
+                    <button
+                        className="p-3 rounded-full border-l border-theme"
+                        onClick={() => setShowLocale(false)}
+                    >
+                        <LanguageIcon />
+                    </button>
+                </motion.button>
+            ) : (
+                <motion.button
+                    className="w-12 h-12 p-3 text-theme-dark dark:text-theme-light"
+                    initial={{ opacity: 0 }}
+                    animate={isOpen ? 'open' : 'closed'}
+                    variants={{
+                        closed: {
+                            scale: 0.5,
+                            opacity: 0,
+                            transition: { delay: 0.1, duration: 0.4 },
+                        },
+                        open: {
+                            scale: 1,
+                            opacity: 1,
+                            transition: { delay: 0.1, duration: 0.4 },
+                        },
+                    }}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.6 }}
+                    onClick={toggleLocale}
+                    onMouseOver={CursorToPointer}
+                    onMouseLeave={CursorToNormal}
+                >
+                    <LanguageIcon />
+                </motion.button>
+            )}
             <motion.button
                 className={
                     'w-12 h-12 p-3 text-theme-dark dark:text-theme-light'
