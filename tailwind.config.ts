@@ -17,7 +17,9 @@ module.exports = {
                 },
             },
             fontFamily: {
-                korean: 'Wave-Regular',
+                logo: 'Dream-Avenue',
+                nanum: 'NanumSquareNeo',
+                cafe: 'Cafe24',
             },
             keyframes: {
                 aurora: {

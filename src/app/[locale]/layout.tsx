@@ -43,7 +43,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
             <link rel="icon" href={favicon.src} type="image/x-icon" />
             <body
                 className={cn(
-                    locale === 'en' ? ubuntu.className : 'font-korean',
+                    locale === 'en' ? ubuntu.className : 'font-nanum',
                     'select-none cursor-none'
                 )}
             >

@@ -4,6 +4,7 @@ import type { Params } from '@/types/param';
 import AuroraBackground from '@/components/ui/auroraBackground';
 import TypewriterEffect from '@/components/ui/typewriterEffect';
 import DownloadCV from '@/components/ui/downloadCVButton';
+import { cn } from '@/utils/cn';
 
 export default function Home({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
@@ -20,10 +21,15 @@ export default function Home({ params: { locale } }: Params) {
     return (
         <AuroraBackground>
             <div className="space-y-4 sm:space-y-8">
-                <h2 className="w-max mx-auto text-xl sm:text-2xl lg:text-3xl font-medium opacity-90 text-theme-dark dark:text-theme-light">
+                <h2 className="w-max mx-auto text-xl sm:text-2xl lg:text-3xl font-medium opacity-80 text-theme-dark dark:text-theme-light">
                     {t('subtitle')}
                 </h2>
-                <h1 className="w-max mx-auto text-6xl sm:text-8xl lg:text-9xl font-medium text-theme-dark dark:text-theme-light">
+                <h1
+                    className={cn(
+                        'w-max mx-auto text-7xl sm:text-8xl lg:text-9xl text-theme-dark dark:text-theme-light',
+                        locale === 'en' ? 'font-logo' : 'font-cafe'
+                    )}
+                >
                     {t('title')}
                 </h1>
             </div>

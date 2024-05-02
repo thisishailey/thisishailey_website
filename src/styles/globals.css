@@ -4,9 +4,20 @@
 
 @layer base {
     @font-face {
-        font-family: 'Wave-Regular';
-        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2')
-            format('woff2');
+        font-family: 'Dream-Avenue';
+        src: url('/fonts/Dream-Avenue.ttf') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'NanumSquareNeo';
+        src: url('/fonts/NanumSquareNeo-Variable.ttf') format('woff2');
+        font-weight: 300, 400, 500, 600, 700, 800, 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Cafe24';
+        src: url('/fonts/Cafe24Danjunghae-v2.0.ttf') format('woff2');
         font-weight: normal;
         font-style: normal;
     }

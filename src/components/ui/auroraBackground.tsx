@@ -43,7 +43,7 @@ export default function AuroraBackground({ children }: AuroraBackgroundProps) {
                         duration: 0.8,
                         ease: 'easeInOut',
                     }}
-                    className="relative flex flex-col gap-14 sm:gap-20 items-center justify-center px-4"
+                    className="relative flex flex-col gap-12 sm:gap-14 items-center justify-center px-4"
                 >
                     {children}
                 </motion.div>
