@@ -47,6 +47,7 @@ export default function Cursor() {
         <div
             ref={cursorRef}
             id="cursor"
+            style={{ top: '9999px', left: '9999px' }}
             className="fixed z-50 p-2 bg-theme border-[0.1px] border-theme-light dark:border-theme-dark rounded-full pointer-events-none"
         ></div>
     );

@@ -67,6 +67,7 @@ export const Menu = ({ localeValues }: MenuProps) => {
                 },
                 { type: 'spring', stiffness: 20 }
             );
+            animate('footer', { display: 'block' });
         } else {
             animate(
                 '#menu',
@@ -81,6 +82,7 @@ export const Menu = ({ localeValues }: MenuProps) => {
                     damping: 20,
                 }
             );
+            animate('footer', { display: 'none' });
         }
     }, [isOpen]);
 
@@ -232,7 +234,7 @@ export const MenuNav = ({ items }: MenuNavProps) => {
         >
             <ul
                 className={cn(
-                    'flex flex-col items-center justify-center gap-6 w-full h-full text-7xl sm:text-8xl lg:text-9xl text-theme-light dark:text-theme-dark',
+                    'flex flex-col items-center justify-center gap-12 w-full h-full text-7xl sm:text-8xl lg:text-9xl text-theme-light dark:text-theme-dark',
                     locale === 'en' ? 'font-logo' : 'font-cafe'
                 )}
             >

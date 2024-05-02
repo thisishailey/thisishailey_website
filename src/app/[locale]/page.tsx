@@ -20,7 +20,7 @@ export default function Home({ params: { locale } }: Params) {
 
     return (
         <AuroraBackground>
-            <div className="space-y-4 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-8 mt-12">
                 <h2 className="w-max mx-auto text-xl sm:text-2xl lg:text-3xl font-medium opacity-80 text-theme-dark dark:text-theme-light">
                     {t('subtitle')}
                 </h2>

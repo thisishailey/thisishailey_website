@@ -2,7 +2,6 @@ import '@/styles/globals.css';
 import { Ubuntu } from 'next/font/google';
 import favicon from '../../../public/favicon.ico';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
 import { locales } from '../../../intl.config';
 import type { Params } from '@/types/param';
 import { cn } from '@/utils/cn';
@@ -35,7 +34,6 @@ const ubuntu = Ubuntu({
 
 export default function RootLayout({ children, params: { locale } }: Props) {
     unstable_setRequestLocale(locale);
-    const t = useTranslations('Footer');
 
     return (
         <html lang={locale}>
@@ -49,7 +47,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
                 <Header />
                 {children}
                 <Cursor />
-                <Footer t={t} />
+                <Footer />
             </body>
         </html>
     );
