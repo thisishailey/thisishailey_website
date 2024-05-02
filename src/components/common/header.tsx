@@ -1,8 +1,13 @@
+import { useTranslations } from 'next-intl';
 import Logo from '../ui/logo';
-import Menu from '../ui/menu';
-import type { Translation } from '@/types/intl';
+import { Menu, MenuNav } from '../ui/menu';
 
-export default function Header({ t }: { t: Translation }) {
+export default function Header() {
+    const t = useTranslations('Header');
+    const tLocale = useTranslations('Locale');
+
+    const localeValues = { en: tLocale('en'), ko: tLocale('ko') };
+
     const menuItems = [
         { text: t('about'), link: '/about' },
         { text: t('skill'), link: '/skill' },
@@ -11,11 +16,14 @@ export default function Header({ t }: { t: Translation }) {
     ];
 
     return (
-        <header className="fixed top-3 inset-x-0 max-w-6xl mx-auto z-40">
-            <div className="relative flex items-center justify-between mx-3 px-6 sm:px-6 py-2 sm:py-3 rounded-full shadow-inner shadow-theme/50 ring-2 ring-theme/25 dark:ring-0 bg-theme-light dark:bg-theme-dark border border-transparent dark:border-theme/[0.2]">
-                <Logo />
-                <Menu items={menuItems} />
-            </div>
-        </header>
+        <>
+            <header className="fixed z-40 top-3 inset-x-0 max-w-6xl mx-auto">
+                <div className="relative flex items-center justify-between mx-3 px-5 sm:px-6 py-1.5 sm:py-3 rounded-full shadow-inner shadow-theme/50 ring-2 ring-theme/25 dark:ring-0 bg-theme-light dark:bg-theme-dark border border-transparent dark:border-theme/[0.2]">
+                    <Logo />
+                    <Menu localeValues={localeValues} />
+                </div>
+            </header>
+            <MenuNav items={menuItems} />
+        </>
     );
 }

@@ -3,7 +3,11 @@
 		"title": "김혜원 | 프론트엔드 개발자",
     	"description": "안녕하세요! 프론트엔드 개발자 김혜원입니다."
 	},
-	"Header":{
+	"Locale": {
+		"en": "영",
+		"ko": "한"
+	},
+	"Header": {
 		"about": "소개",
 		"skill": "기술 스택",
 		"project": "프로젝트",

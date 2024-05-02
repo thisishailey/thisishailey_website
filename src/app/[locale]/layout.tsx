@@ -35,8 +35,7 @@ const ubuntu = Ubuntu({
 
 export default function RootLayout({ children, params: { locale } }: Props) {
     unstable_setRequestLocale(locale);
-    const tHeader = useTranslations('Header');
-    const tFooter = useTranslations('Footer');
+    const t = useTranslations('Footer');
 
     return (
         <html lang={locale}>
@@ -44,13 +43,13 @@ export default function RootLayout({ children, params: { locale } }: Props) {
             <body
                 className={cn(
                     locale === 'en' ? ubuntu.className : 'font-nanum',
-                    'select-none cursor-none'
+                    'select-none cursor-none overflow-hidden'
                 )}
             >
-                <Header t={tHeader} />
+                <Header />
                 {children}
                 <Cursor />
-                <Footer t={tFooter} />
+                <Footer t={t} />
             </body>
         </html>
     );

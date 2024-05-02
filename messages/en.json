@@ -3,7 +3,11 @@
 		"title": "Hailey Kim | FE Developer",
     	"description": "Hi! I'm Hailey Kim, a front-end developer."
 	},
-	"Header":{
+	"Locale": {
+		"en": "en",
+		"ko": "ko"
+	},
+	"Header": {
 		"about": "About",
 		"skill": "Skills",
 		"project": "Projects",

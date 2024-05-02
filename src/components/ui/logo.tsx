@@ -5,7 +5,7 @@ export default function Logo() {
     return (
         <Link
             href={'/'}
-            className="relative h-12 w-12 sm:w-28 flex items-end justify-center font-logo text-4xl text-theme-dark dark:text-theme-light"
+            className="flex items-end justify-center h-12 w-12 sm:w-28 mb-1 font-logo text-4xl text-theme-dark dark:text-theme-light"
             onMouseOver={CursorToPointer}
             onMouseLeave={CursorToNormal}
         >
