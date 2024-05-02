@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useCycle } from 'framer-motion';
+import { CursorToNormal, CursorToPointer } from '../common/cursor';
 
 interface MenuProps {
     items: { text: string; link: string }[];
@@ -21,7 +22,11 @@ export default function Menu({ items }: MenuProps) {
 }
 
 const ToggleButton = ({ onClick }: { onClick: () => void }) => (
-    <button onClick={onClick}>
+    <button
+        onClick={onClick}
+        onMouseOver={CursorToPointer}
+        onMouseLeave={CursorToNormal}
+    >
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

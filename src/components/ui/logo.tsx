@@ -4,10 +4,16 @@ import logoLight from '@/assets/logo/long-light.png';
 import logoDark from '@/assets/logo/long-dark.png';
 import logoShortLight from '@/assets/logo/short-light.png';
 import logoShortDark from '@/assets/logo/short-dark.png';
+import { CursorToNormal, CursorToPointer } from '../common/cursor';
 
 export default function Logo() {
     return (
-        <Link href={'/'} className="relative h-10 w-[100px]">
+        <Link
+            href={'/'}
+            className="relative h-10 w-[100px]"
+            onMouseOver={CursorToPointer}
+            onMouseLeave={CursorToNormal}
+        >
             <Image
                 src={logoLight.src}
                 alt="Home"

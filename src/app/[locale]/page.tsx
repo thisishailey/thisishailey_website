@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import type { Params } from '@/types/param';
 import AuroraBackground from '@/components/ui/aurora-background';
 import TypewriterEffect from '@/components/ui/typewriter-effect';
+import DownloadCV from '@/components/ui/downloadCVButton';
 
 export default function Home({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
@@ -27,9 +28,7 @@ export default function Home({ params: { locale } }: Params) {
                 </h1>
             </div>
             <TypewriterEffect words={words} />
-            <button className="bg-theme text-theme-light dark:text-theme-dark rounded-full px-6 sm:px-8 py-4 sm:py-6 text-lg sm:text-xl lg:text-2xl">
-                {t('download')}
-            </button>
+            <DownloadCV text={t('download')} />
         </AuroraBackground>
     );
 }

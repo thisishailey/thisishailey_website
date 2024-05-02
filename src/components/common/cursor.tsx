@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { animate } from 'framer-motion';
 
 export default function Cursor() {
     const cursorRef = useRef<HTMLDivElement>(null);
@@ -45,7 +46,30 @@ export default function Cursor() {
     return (
         <div
             ref={cursorRef}
-            className="bg-theme rounded-full p-2 fixed pointer-events-none z-50"
+            id="cursor"
+            className="fixed z-50 p-2 bg-theme border-[0.1px] border-theme-light dark:border-theme-dark rounded-full pointer-events-none"
         ></div>
     );
 }
+
+export const CursorToPointer = () => {
+    animate(
+        '#cursor',
+        {
+            scale: 4.5,
+            opacity: 0.4,
+        },
+        { type: 'tween' }
+    );
+};
+
+export const CursorToNormal = () => {
+    animate(
+        '#cursor',
+        {
+            scale: 1,
+            opacity: 1,
+        },
+        { type: 'tween' }
+    );
+};
