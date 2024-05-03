@@ -9,10 +9,10 @@ export default function Header() {
     const localeValues = { en: tLocale('en'), ko: tLocale('ko') };
 
     const menuItems = [
-        { text: t('about'), link: '/about' },
-        { text: t('skill'), link: '/skill' },
-        { text: t('project'), link: '/project' },
-        { text: t('contact'), link: '/contact' },
+        { text: t('about'), link: 'about' },
+        { text: t('skill'), link: 'skills' },
+        { text: t('project'), link: 'projects' },
+        { text: t('contact'), link: 'contact' },
     ];
 
     return (

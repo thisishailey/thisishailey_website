@@ -67,7 +67,7 @@ export const Menu = ({ localeValues }: MenuProps) => {
                 },
                 { type: 'spring', stiffness: 20 }
             );
-            animate('footer', { display: 'block' });
+            animate('footer', { opacity: 1 }, { delay: 0.4 });
         } else {
             animate(
                 '#menu',
@@ -82,7 +82,7 @@ export const Menu = ({ localeValues }: MenuProps) => {
                     damping: 20,
                 }
             );
-            animate('footer', { display: 'none' });
+            animate('footer', { opacity: 0 }, { delay: 0.2 });
         }
     }, [isOpen]);
 
@@ -240,8 +240,8 @@ export const MenuNav = ({ items }: MenuNavProps) => {
             >
                 {items.map((item) => (
                     <Link
-                        key={item.text}
-                        href={item.link}
+                        key={item.link}
+                        href={`/${locale}/${item.link}`}
                         onMouseOver={CursorToPointer}
                         onMouseLeave={CursorToNormal}
                     >
