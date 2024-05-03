@@ -22,12 +22,19 @@
 		"download": "Download CV"
 	},
 	"Description": {
-		"0": "I turn creative ideas into amazing websites.", 
+		"0": "Turn creative ideas into amazing websites.", 
 		"1": "",
 		"2": ""
 	},
 	"About": {},
 	"Skills": {},
 	"Projects": {},
-	"Contact": {}
+	"Contact": {
+		"title": "Contact", 
+		"section1": "get in touch",
+		"section2": "learn more",
+		"email": "email", 
+		"github": "github", 
+		"blog": "blog"
+	}
 }
