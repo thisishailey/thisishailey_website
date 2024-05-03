@@ -1,11 +1,13 @@
+import { unstable_setRequestLocale } from 'next-intl/server';
+import type { Params } from '@/types/param';
 import { useTranslations } from 'next-intl';
 import { contactInfo } from '../../../../messages/info';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { cn } from '@/utils/cn';
 import { Meteors } from '@/components/ui/meteors';
-import type { Params } from '@/types/param';
 
 export default function Contact({ params: { locale } }: Params) {
+    unstable_setRequestLocale(locale);
     const t = useTranslations('Contact');
 
     return (
