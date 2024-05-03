@@ -19,13 +19,13 @@ export default function Contact() {
             >
                 {t('title')}
             </h1>
-            <ul className="flex flex-col gap-7 sm:gap-10 divide-y-2 mb-10 sm:mb-14 text-xl sm:text-2xl">
+            <ul className="flex flex-col gap-7 sm:gap-10 divide-y-2 mb-10 sm:mb-14 text-lg xs:text-xl sm:text-2xl">
                 {contactInfo.map((info) => (
                     <li
                         key={info.key}
                         className="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-7 sm:pt-10"
                     >
-                        <span>{t(info.key).toUpperCase()}</span>
+                        <span className='font-medium'>{t(info.key).toUpperCase()}</span>
                         <a
                             href={info.link}
                             target="_blank"
