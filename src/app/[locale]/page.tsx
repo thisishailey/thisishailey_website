@@ -1,5 +1,5 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { useTranslations } from 'next-intl';
+import { useMessages, useTranslations } from 'next-intl';
 import type { Params } from '@/types/param';
 import AuroraBackground from '@/components/ui/auroraBackground';
 import TypewriterEffect from '@/components/ui/typewriterEffect';
@@ -10,13 +10,10 @@ export default function Home({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
     const t = useTranslations('Home');
 
-    const words: { text: string }[] = t('description')
-        .split(' ')
-        .map((text) => {
-            return {
-                text,
-            };
-        });
+    const description = useTranslations('Description');
+    const messages = useMessages();
+    const keys = Object.keys(messages.Description);
+    const sentences = keys.map((key) => description(key));
 
     return (
         <AuroraBackground>
@@ -33,7 +30,7 @@ export default function Home({ params: { locale } }: Params) {
                     {t('title')}
                 </h1>
             </div>
-            <TypewriterEffect words={words} />
+            <TypewriterEffect sentences={sentences} />
             <DownloadCV text={t('download')} />
         </AuroraBackground>
     );

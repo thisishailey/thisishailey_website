@@ -19,7 +19,11 @@
 	"Home": {
 		"subtitle": "FE Developer",
 		"title": "Hailey Kim",
-		"description": "I'm a front-end developer.",
 		"download": "Download CV"
+	},
+	"Description": {
+		"0": "I make websites that inspire.", 
+		"1": "",
+		"2": ""
 	}
 }

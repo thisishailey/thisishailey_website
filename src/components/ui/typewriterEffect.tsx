@@ -1,96 +1,88 @@
 'use client';
 
-import { useEffect } from 'react';
-import { motion, stagger, useAnimate, useInView } from 'framer-motion';
-import { cn } from '@/utils/cn';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface TypewriterEffectProps {
-    words: {
-        text: string;
-        className?: string;
-    }[];
+    sentences: string[];
 }
 
-export default function TypewriterEffect({ words }: TypewriterEffectProps) {
-    const wordsArray = words.map((word) => {
-        return {
-            ...word,
-            text: word.text.split(''),
-        };
-    });
-
-    const [scope, animate] = useAnimate();
-    const isInView = useInView(scope);
+export default function TypewriterEffect({ sentences }: TypewriterEffectProps) {
+    const [isTyping, setIsTyping] = useState<boolean>(false);
+    const [currentSentence, setCurrentSentence] = useState<number>(0);
 
     useEffect(() => {
         setTimeout(() => {
-            if (isInView) {
-                animate(
-                    'span',
-                    {
-                        display: 'inline-block',
-                        opacity: 1,
-                        width: 'fit-content',
-                    },
-                    {
-                        duration: 0.3,
-                        delay: stagger(0.1),
-                        ease: 'easeInOut',
-                    }
-                );
-            }
-        }, 2000);
-    }, [animate, isInView]);
+            setIsTyping(true);
+        }, 2500);
+    }, []);
 
-    const renderWords = () => {
-        return (
-            <motion.div ref={scope} className="inline">
-                {wordsArray.map((word, idx) => {
-                    return (
-                        <div key={`word-${idx}`} className="inline-block">
-                            {word.text.map((char, index) => (
-                                <motion.span
-                                    initial={{}}
-                                    key={`char-${index}`}
-                                    className={cn(
-                                        `text-theme-dark dark:text-theme-light opacity-0 hidden`,
-                                        word.className
-                                    )}
-                                >
-                                    {char}
-                                </motion.span>
-                            ))}
-                            &nbsp;
-                        </div>
-                    );
-                })}
-            </motion.div>
-        );
+    const variants = {
+        type: {
+            display: 'inline-block',
+            opacity: 1,
+            width: 'fit-content',
+            transition: {
+                duration: 0.2,
+                ease: 'easeInOut',
+            },
+        },
+        erase: {
+            display: 'none',
+            opacity: 0,
+        },
     };
 
     return (
-        <div
-            className={
-                'text-3xl sm:text-4xl lg:text-5xl font-medium text-center'
-            }
-        >
-            {renderWords()}
-            <motion.span
-                initial={{
-                    opacity: 0,
+        <div className="text-3xl sm:text-4xl lg:text-5xl font-medium text-center">
+            <motion.div
+                initial={'erase'}
+                animate={isTyping ? 'type' : 'erase'}
+                variants={{
+                    type: {
+                        display: 'inline',
+                        transition: { staggerChildren: 0.1 },
+                    },
+                    erase: {
+                        display: 'none',
+                    },
                 }}
-                animate={{
-                    opacity: 1,
-                }}
-                transition={{
-                    duration: 0.8,
-                    repeat: Infinity,
-                    repeatType: 'reverse',
-                }}
-                className={
-                    'inline-block relative top-1.5 rounded-sm w-1 h-8 sm:h-10 lg:h-12 bg-theme'
-                }
-            ></motion.span>
+            >
+                {sentences[currentSentence].split(' ').map((word, idx) => (
+                    <motion.div key={`word-${idx}`} className="inline-block">
+                        {word.split('').map((char, index) => (
+                            <motion.span
+                                key={`char-${index}`}
+                                className="text-theme-dark dark:text-theme-light opacity-0 hidden"
+                                variants={variants}
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
+                        &nbsp;
+                    </motion.div>
+                ))}
+            </motion.div>
+            <Cursor />
         </div>
     );
 }
+
+const Cursor = () => {
+    return (
+        <motion.span
+            initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: 1,
+            }}
+            transition={{
+                duration: 0.8,
+                repeat: Infinity,
+                repeatType: 'reverse',
+            }}
+            className="inline-block relative top-1.5 rounded-sm w-1 h-8 sm:h-10 lg:h-12 bg-theme"
+        ></motion.span>
+    );
+};
