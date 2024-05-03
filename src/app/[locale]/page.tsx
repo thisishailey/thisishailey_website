@@ -1,9 +1,9 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { useMessages, useTranslations } from 'next-intl';
 import type { Params } from '@/types/param';
-import AuroraBackground from '@/components/ui/auroraBackground';
-import TypewriterEffect from '@/components/ui/typewriterEffect';
-import DownloadCV from '@/components/ui/downloadCVButton';
+import AuroraBackground from '@/components/ui/home/auroraBackground';
+import TypewriterEffect from '@/components/ui/home/typewriterEffect';
+import DownloadCV from '@/components/ui/home/downloadCVButton';
 import { cn } from '@/utils/cn';
 
 export default function Home({ params: { locale } }: Params) {
