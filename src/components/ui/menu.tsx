@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { animate, motion, useCycle } from 'framer-motion';
+import { animate, motion, stagger, useCycle } from 'framer-motion';
 import { CursorToNormal, CursorToPointer } from '../common/cursor';
 import { LanguageIcon, MoonIcon, SunIcon } from './icons';
 import { cn } from '@/utils/cn';
@@ -67,8 +67,18 @@ export const Menu = ({ localeValues }: MenuProps) => {
                 },
                 { type: 'spring', stiffness: 20 }
             );
+            animate(
+                '#menu li',
+                { opacity: 1, y: 0 },
+                { delay: stagger(0.3), duration: 0.4 }
+            );
             animate('footer', { opacity: 1 }, { delay: 0.4 });
         } else {
+            animate(
+                '#menu li',
+                { opacity: 0, y: 30 },
+                { delay: stagger(0.1, { from: 'last' }), duration: 0.4 }
+            );
             animate(
                 '#menu',
                 {
@@ -76,7 +86,7 @@ export const Menu = ({ localeValues }: MenuProps) => {
                     clipPath: `circle(0px at ${x}px ${y}px)`,
                 },
                 {
-                    delay: 0.1,
+                    delay: 0.4,
                     type: 'spring',
                     stiffness: 100,
                     damping: 20,
@@ -178,7 +188,10 @@ export const Menu = ({ localeValues }: MenuProps) => {
                 initial={false}
                 animate={isOpen ? 'open' : 'closed'}
                 id="menu-button"
-                className="w-12 h-12 p-3 pt-3.5 text-theme-dark dark:text-theme-light"
+                className={cn(
+                    'w-12 h-12 p-3 pt-3.5 text-theme-dark dark:text-theme-light',
+                    isOpen && 'isOpen'
+                )}
                 onClick={() => toggleMenu()}
                 onMouseOver={CursorToPointer}
                 onMouseLeave={CursorToNormal}
@@ -226,6 +239,13 @@ interface MenuNavProps {
 export const MenuNav = ({ items }: MenuNavProps) => {
     const locale = useLocale();
 
+    const closeMenu = () => {
+        const $button = document.getElementById(
+            'menu-button'
+        ) as HTMLButtonElement;
+        $button.click();
+    };
+
     return (
         <motion.nav
             id="menu"
@@ -242,10 +262,17 @@ export const MenuNav = ({ items }: MenuNavProps) => {
                     <Link
                         key={item.link}
                         href={`/${locale}/${item.link}`}
+                        onClick={closeMenu}
                         onMouseOver={CursorToPointer}
                         onMouseLeave={CursorToNormal}
                     >
-                        <li>{item.text}</li>
+                        <motion.li
+                            initial={{ opacity: 0, y: 30 }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            {item.text}
+                        </motion.li>
                     </Link>
                 ))}
             </ul>
