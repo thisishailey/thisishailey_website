@@ -1,11 +1,11 @@
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { contactInfo } from '../../../../messages/info';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { cn } from '@/utils/cn';
 import { Meteors } from '@/components/ui/meteors';
+import type { Params } from '@/types/param';
 
-export default function Contact() {
-    const locale = useLocale();
+export default function Contact({ params: { locale } }: Params) {
     const t = useTranslations('Contact');
 
     return (
@@ -25,7 +25,9 @@ export default function Contact() {
                         key={info.key}
                         className="flex flex-col sm:flex-row items-center gap-5 sm:gap-10 pt-7 sm:pt-10"
                     >
-                        <span className='font-medium'>{t(info.key).toUpperCase()}</span>
+                        <span className="font-medium">
+                            {t(info.key).toUpperCase()}
+                        </span>
                         <a
                             href={info.link}
                             target="_blank"
