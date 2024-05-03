@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { CursorToNormal, CursorToPointer } from '../common/cursor';
+import { CursorToNormal, CursorToPointer } from '../../common/cursor';
 
 export default function Logo() {
     const closeMenu = () => {

@@ -23,8 +23,8 @@ export default function TypewriterEffect({ sentences }: TypewriterEffectProps) {
             opacity: 1,
             width: 'fit-content',
             transition: {
-                duration: 0.2,
-                ease: 'easeInOut',
+                duration: 0.6,
+				type: 'tween'
             },
         },
         erase: {
@@ -41,7 +41,7 @@ export default function TypewriterEffect({ sentences }: TypewriterEffectProps) {
                 variants={{
                     type: {
                         display: 'inline',
-                        transition: { staggerChildren: 0.1 },
+                        transition: { staggerChildren: 0.13 },
                     },
                     erase: {
                         display: 'none',

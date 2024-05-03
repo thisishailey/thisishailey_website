@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import Theme from '@/styles/theme';
 import { Ubuntu } from 'next/font/google';
 import favicon from '../../../public/favicon.ico';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -36,7 +37,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
     unstable_setRequestLocale(locale);
 
     return (
-        <html lang={locale}>
+        <html lang={locale} suppressHydrationWarning>
             <link rel="icon" href={favicon.src} type="image/x-icon" />
             <body
                 className={cn(
@@ -44,10 +45,12 @@ export default function RootLayout({ children, params: { locale } }: Props) {
                     'select-none cursor-none overflow-hidden'
                 )}
             >
-                <Header />
-                {children}
-                <Cursor />
-                <Footer />
+                <Theme>
+                    <Header />
+                    {children}
+                    <Cursor />
+                    <Footer />
+                </Theme>
             </body>
         </html>
     );

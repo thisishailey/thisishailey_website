@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
-import Logo from '../ui/logo';
-import { Menu, MenuNav } from '../ui/menu';
+import Logo from '../ui/header/logo';
+import Menu from '../ui/header/menu';
+import MenuNavigation from '../ui/header/nav';
 
 export default function Header() {
     const t = useTranslations('Header');
@@ -23,7 +24,7 @@ export default function Header() {
                     <Menu localeValues={localeValues} />
                 </div>
             </header>
-            <MenuNav items={menuItems} />
+            <MenuNavigation items={menuItems} />
         </>
     );
 }
