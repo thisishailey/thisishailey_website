@@ -30,8 +30,12 @@
 		"title": "소개", 
 		"content": ""
 	},
-	"Skills": {},
-	"Projects": {},
+	"Skills": {
+		"title": "기술스택"
+	},
+	"Projects": {
+		"title": "프로젝트"
+	},
 	"Contact": {
 		"title": "연락처", 
 		"section1": "get in touch",

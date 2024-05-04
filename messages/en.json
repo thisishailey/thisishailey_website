@@ -30,8 +30,12 @@
 		"title": "About", 
 		"content": ""
 	},
-	"Skills": {},
-	"Projects": {},
+	"Skills": {
+		"title": "Skills"
+	},
+	"Projects": {
+		"title": "Projects"
+	},
 	"Contact": {
 		"title": "Contact", 
 		"section1": "get in touch",

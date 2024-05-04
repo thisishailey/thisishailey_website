@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { contactInfo } from '../../../../messages/info';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { cn } from '@/utils/cn';
+import Main from '@/components/common/wrapper';
 import { Meteors } from '@/components/ui/meteors';
 
 export default function Contact({ params: { locale } }: Params) {
@@ -13,7 +14,7 @@ export default function Contact({ params: { locale } }: Params) {
     return (
         <>
             <Meteors number={50} />
-            <main className="flex flex-col items-center sm:justify-center gap-8 sm:gap-14 w-screen max-w-6xl h-screen mx-auto p-4 pt-20 sm:pt-24 pb-8 sm:pb-10">
+            <Main>
                 <h1
                     className={cn(
                         'mt-14 sm:mt-0 text-6xl sm:text-7xl',
@@ -43,7 +44,7 @@ export default function Contact({ params: { locale } }: Params) {
                         </li>
                     ))}
                 </ul>
-            </main>
+            </Main>
         </>
     );
 }
