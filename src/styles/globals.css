@@ -22,3 +22,9 @@
         font-style: normal;
     }
 }
+
+@media (hover: none) {
+    #cursor {
+        display: none;
+    }
+}

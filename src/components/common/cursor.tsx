@@ -13,6 +13,17 @@ export default function Cursor() {
 
         const { clientX: x, clientY: y } = event;
 
+        const minY = 15;
+        const maxY = document.body.clientHeight - 40;
+        const minX = 30;
+        const maxX = document.body.clientWidth - 30;
+
+        if (y > maxY || y < minY || x > maxX || x < minX) {
+            return cursorRef.current.classList.add('hidden');
+        } else {
+            cursorRef.current.classList.remove('hidden');
+        }
+
         cursorRef.current.style.left = x + 'px';
         cursorRef.current.style.top = y + 'px';
     };
