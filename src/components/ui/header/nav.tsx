@@ -36,6 +36,7 @@ export default function MenuNavigation({ items }: MenuNavProps) {
                     <Link
                         key={item.link}
                         href={`/${locale}/${item.link}`}
+                        scroll={false}
                         onClick={closeMenu}
                         onMouseOver={CursorToPointer}
                         onMouseLeave={CursorToNormal}

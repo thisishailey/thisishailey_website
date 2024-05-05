@@ -5,12 +5,12 @@ export const contactInfo = [
         key: 'email',
     },
     {
-        value: 'https://github.com/kfbkhw',
+        value: 'github.com/kfbkhw',
         link: 'https://github.com/kfbkhw',
         key: 'github',
     },
     {
-        value: 'https://velog.io/@kfbkhw/posts',
+        value: 'velog.io/@kfbkhw',
         link: 'https://velog.io/@kfbkhw/posts',
         key: 'blog',
     },

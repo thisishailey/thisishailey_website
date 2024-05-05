@@ -15,13 +15,15 @@ export default function About({ params: { locale } }: Params) {
             <Main>
                 <h1
                     className={cn(
-                        'text-6xl sm:text-7xl',
+                        'mt-14 sm:mt-0 text-6xl sm:text-7xl',
                         locale === 'en' ? 'font-logo' : 'font-cafe'
                     )}
                 >
                     {t('title')}
                 </h1>
-                <p>{t('content')}</p>
+                <p className="px-4 !leading-loose text-lg sm:text-xl lg:text-2xl whitespace-pre-line">
+                    {t('content')}
+                </p>
             </Main>
         </>
     );

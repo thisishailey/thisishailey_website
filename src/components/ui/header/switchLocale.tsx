@@ -33,7 +33,7 @@ export default function LocaleButton({ localeValues, isOpen }: LocaleProps) {
         }
 
         const href = pathArr.join('/');
-        replace(href);
+        replace(href, { scroll: false });
     };
 
     return (

@@ -17,6 +17,7 @@ export default function Logo() {
     return (
         <Link
             href={'/'}
+            scroll={false}
             className="flex items-end justify-center h-12 w-12 sm:w-28 mb-1 font-logo text-4xl text-theme-dark dark:text-theme-light"
             onClick={closeMenu}
             onMouseOver={CursorToPointer}
