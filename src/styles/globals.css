@@ -23,7 +23,7 @@
     }
 }
 
-@media (hover: none) {
+@media (hover: none), (not (pointer: fine)) {
     #cursor {
         display: none;
     }
