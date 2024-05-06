@@ -6,10 +6,18 @@ import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
 import Sparkles from '@/components/ui/background/sparkles';
+import BottomNavButtons from '@/components/common/bottomNav';
 
 export default function Contact({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
     const t = useTranslations('Contact');
+
+    const tSkills = useTranslations('Skills');
+    const tProjects = useTranslations('Projects');
+    const navValues = [
+        { name: tSkills('title'), link: `/${locale}/skills` },
+        { name: tProjects('title'), link: `/${locale}/projects` },
+    ];
 
     return (
         <>
@@ -23,15 +31,16 @@ export default function Contact({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
-                <ul className="flex flex-col gap-6 sm:gap-10 divide-y-2 mb-10 sm:mb-14 text-lg xs:text-xl sm:text-2xl">
+                <ul className="flex flex-col gap-6 sm:gap-10 divide-y-2 text-lg xs:text-xl sm:text-2xl">
                     {contactInfo.map((info) => (
                         <li
                             key={info.key}
-                            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-10 pt-6 sm:pt-10"
+                            className="flex items-center gap-4 sm:gap-10 pt-6 sm:pt-10 first:pt-4"
                         >
-                            <span className="font-medium">
+                            <span className="hidden sm:block font-medium">
                                 {t(info.key).toUpperCase()}
                             </span>
+                            <span className="sm:hidden">{info.icon}</span>
                             <a
                                 href={info.link}
                                 target="_blank"
@@ -44,6 +53,7 @@ export default function Contact({ params: { locale } }: Params) {
                         </li>
                     ))}
                 </ul>
+                <BottomNavButtons values={navValues} />
             </Main>
         </>
     );
