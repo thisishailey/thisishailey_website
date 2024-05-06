@@ -23,12 +23,16 @@ export function LeftNavButton({ value, icon }: NavButtonProps) {
             onMouseLeave={CursorToNormal}
         >
             <motion.div
-                className="relative z-10 px-6 sm:px-8 py-3 sm:py-4 flex gap-4 items-center rounded-full shadow-lg border border-theme text-theme font-normal text-lg sm:text-xl"
+                className="relative z-10 px-6 sm:px-8 py-3 sm:py-4 flex gap-2 sm:gap-3 items-center rounded-full shadow-lg border border-theme bg-theme-light dark:bg-theme-dark text-theme font-normal text-base sm:text-xl"
                 whileHover={{
                     color: 'var(--theme-light)',
                     backgroundColor: 'var(--theme)',
                 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{
+                    color: 'var(--theme-light)',
+                    backgroundColor: 'var(--theme)',
+                    scale: 0.9,
+                }}
             >
                 {icon}
                 {value.name}
@@ -46,12 +50,16 @@ export function RightNavButton({ value, icon }: NavButtonProps) {
             onMouseLeave={CursorToNormal}
         >
             <motion.div
-                className="relative z-10 px-6 sm:px-8 py-3 sm:py-4 flex gap-4 items-center rounded-full shadow-lg border border-theme text-theme font-normal text-lg sm:text-xl"
+                className="relative z-10 px-6 sm:px-8 py-3 sm:py-4 flex gap-2 sm:gap-3 items-center rounded-full shadow-lg border border-theme bg-theme-light dark:bg-theme-dark text-theme font-normal text-base sm:text-xl"
                 whileHover={{
                     color: 'var(--theme-light)',
                     backgroundColor: 'var(--theme)',
                 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{
+                    color: 'var(--theme-light)',
+                    backgroundColor: 'var(--theme)',
+                    scale: 0.9,
+                }}
             >
                 {value.name}
                 {icon}

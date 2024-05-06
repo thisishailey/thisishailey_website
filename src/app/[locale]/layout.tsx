@@ -42,7 +42,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
             <body
                 className={cn(
                     locale === 'en' ? ubuntu.className : 'font-nanum',
-                    'select-none cursor-none overflow-hidden antialiased bg-theme-light dark:bg-theme-dark'
+                    'select-none cursor-none overflow-hidden break-keep antialiased bg-theme-light dark:bg-theme-dark'
                 )}
             >
                 <Theme>

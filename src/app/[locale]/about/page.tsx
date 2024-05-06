@@ -29,7 +29,7 @@ export default function About({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
-                <p className="max-w-3xl mx-auto px-6 !leading-loose break-keep text-lg sm:text-2xl whitespace-pre-line">
+                <p className="max-w-3xl mx-auto px-6 !leading-loose text-lg sm:text-2xl whitespace-pre-line">
                     {t('content')}
                 </p>
                 <BottomNavButtons values={navValues} />

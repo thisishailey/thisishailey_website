@@ -28,7 +28,7 @@ export default function MenuNavigation({ items }: MenuNavProps) {
         >
             <ul
                 className={cn(
-                    'flex flex-col items-center justify-center gap-10 xs:gap-12 w-full h-full pt-20 pb-12 text-7xl sm:text-8xl lg:text-9xl text-theme-light dark:text-theme-dark',
+                    'flex flex-col items-center justify-center gap-10 xs:gap-12 w-full h-full pt-20 pb-28 sm:pb-14 text-7xl sm:text-8xl lg:text-9xl text-theme-light dark:text-theme-dark',
                     locale === 'en' ? 'font-logo' : 'font-cafe'
                 )}
             >
