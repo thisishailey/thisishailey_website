@@ -5,7 +5,7 @@ import { contactInfo } from '../../../../messages/info';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
-import { Meteors } from '@/components/ui/meteors';
+import Sparkles from '@/components/ui/background/sparkles';
 
 export default function Contact({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
@@ -13,7 +13,7 @@ export default function Contact({ params: { locale } }: Params) {
 
     return (
         <>
-            <Meteors number={50} />
+            <Sparkles />
             <Main>
                 <h1
                     className={cn(

@@ -1,5 +1,6 @@
-export const Meteors = ({ number }: { number?: number }) => {
+export default function Meteors({ number }: { number?: number }) {
     const meteors = new Array(number || 20).fill(true);
+
     return (
         <div className="fixed w-screen h-screen overflow-hidden">
             {meteors.map((el, idx) => (
@@ -17,4 +18,4 @@ export const Meteors = ({ number }: { number?: number }) => {
             ))}
         </div>
     );
-};
+}
