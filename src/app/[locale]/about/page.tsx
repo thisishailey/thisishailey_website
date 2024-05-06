@@ -4,10 +4,18 @@ import { useTranslations } from 'next-intl';
 import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
 import { Meteors } from '@/components/ui/meteors';
+import BottomNavButtons from '@/components/common/bottomNav';
 
 export default function About({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
     const t = useTranslations('About');
+
+    const tSkills = useTranslations('Skills');
+    const tProjects = useTranslations('Projects');
+    const navValues = [
+        { name: tSkills('title'), link: `/${locale}/skills` },
+        { name: tProjects('title'), link: `/${locale}/projects` },
+    ];
 
     return (
         <>
@@ -21,9 +29,10 @@ export default function About({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
-                <p className="px-4 !leading-loose text-lg sm:text-xl lg:text-2xl whitespace-pre-line">
+                <p className="max-w-3xl mx-auto px-6 !leading-loose break-keep text-lg sm:text-2xl whitespace-pre-line">
                     {t('content')}
                 </p>
+                <BottomNavButtons values={navValues} />
             </Main>
         </>
     );

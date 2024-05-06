@@ -22,13 +22,13 @@
 		"download": "Download CV"
 	},
 	"Description": {
-		"0": "Turn creative ideas into amazing websites.", 
+		"0": "Turn creative ideas into engaging websites.", 
 		"1": "",
 		"2": ""
 	},
 	"About": {
 		"title": "About", 
-		"content": "Hi, I'm a front-end developer based in Seoul, South Korea.\nIt is my passion to build a more user-friendly, eye-catching website."
+		"content": "Hi, I'm a front-end developer based in Seoul, South Korea. It is my passion to build a more user-friendly, eye-catching website.\n\nI love learning new technologies and working with others to provide quality web services."
 	},
 	"Skills": {
 		"title": "Skills"
