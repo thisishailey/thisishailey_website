@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
 import type { Params } from '@/types/param';
 import { useTranslations } from 'next-intl';
-import { contactInfo } from '../../../../messages/info';
+import { contactInfo } from '../../../../messages/contact';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
