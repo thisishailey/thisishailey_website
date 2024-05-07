@@ -19,7 +19,8 @@
 	"Home": {
 		"subtitle": "프론트엔드 개발자",
 		"title": "김 혜 원",
-		"download": "이력서 다운로드"
+		"download": "이력서 다운로드",
+		"resume": "이력서_김혜원"
 	},
 	"Description": {
 		"0": "실용적이고 감각적인 웹사이트를 만듭니다.", 

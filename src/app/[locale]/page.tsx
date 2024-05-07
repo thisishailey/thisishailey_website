@@ -3,7 +3,7 @@ import { useMessages, useTranslations } from 'next-intl';
 import type { Params } from '@/types/param';
 import AuroraBackground from '@/components/ui/home/auroraBackground';
 import TypewriterEffect from '@/components/ui/home/typewriterEffect';
-import DownloadCV from '@/components/ui/home/downloadCVButton';
+import DownloadCVButton from '@/components/ui/home/downloadCV';
 import { cn } from '@/utils/cn';
 
 export default function Home({ params: { locale } }: Params) {
@@ -31,7 +31,7 @@ export default function Home({ params: { locale } }: Params) {
                 </h1>
             </div>
             <TypewriterEffect sentences={sentences} />
-            <DownloadCV text={t('download')} />
+            <DownloadCVButton text={t('download')} filename={t('resume')} />
         </AuroraBackground>
     );
 }
