@@ -23,7 +23,7 @@ export default function Projects({ params: { locale } }: Params) {
             <Main>
                 <h1
                     className={cn(
-                        'mt-14 sm:mt-0 text-6xl sm:text-7xl',
+                        'mt-14 sm:mt-0 text-5xl sm:text-6xl',
                         locale === 'en' ? 'font-logo' : 'font-cafe'
                     )}
                 >
