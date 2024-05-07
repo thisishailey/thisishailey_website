@@ -43,7 +43,17 @@
 		"content4": "<s>SQL 개발자</s><s>정보처리기사</s>"
 	},
 	"Projects": {
-		"title": "프로젝트"
+		"title": "프로젝트",
+		"project1": "Leaflet",
+		"project2": "My Store",
+		"project3": "thisishailey.com",
+		"subtitle1": "커뮤니티 웹사이트",
+		"subtitle2": "쇼핑몰 웹사이트",
+		"subtitle3": "포트폴리오 웹사이트",
+		"description1": "책을 좋아하는 사람들을 위한 소셜 플랫폼.\n- 반응형 디자인, 다크 모드\n- sign up & sign in by email or Google account\n- view and edit my account profile\n- view my posts and book reviews\n- view and remove likes and bookmarks\n- write, view and search posts\n- comment, like or bookmark posts\n- view current Bestsellers and New Arrivals\n- search, rate and review books\n- search bookstores and view the location on the map",
+		"description2": "- 반응형 디자인, 다크 모드\n- view & search products\n- view products by category and sort by price\n- add products to cart, change quantities, and checkout\n- safe sign up & sign in",
+		"description3": "지금 보고 계시는 이 웹사이트입니다.\n- 반응형 디자인, 다크 모드\n- internationalization (English, Korean)\n- published on a custom domain\n- custom cursor and smooth animations"
+
 	},
 	"Contact": {
 		"title": "연락처", 

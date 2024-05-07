@@ -5,6 +5,7 @@ import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
 import Meteors from '@/components/ui/background/meteors';
 import BottomNavButtons from '@/components/common/bottomNav';
+import ProjectCard from '@/components/common/projectCard';
 
 export default function Projects({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
@@ -29,6 +30,15 @@ export default function Projects({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
+                {[1, 2, 3].map((i) => (
+                    <ProjectCard
+                        key={i}
+                        index={i - 1}
+                        title={t(`project${i}`)}
+                        subtitle={t(`subtitle${i}`)}
+                        description={t(`description${i}`)}
+                    />
+                ))}
                 <BottomNavButtons values={navValues} />
             </Main>
         </>

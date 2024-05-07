@@ -43,7 +43,16 @@
 		"content4": "<s>SQL-Developer</s><s>Information Engineer</s>"
 	},
 	"Projects": {
-		"title": "Projects"
+		"title": "Projects",
+		"project1": "Leaflet",
+		"project2": "My Store",
+		"project3": "thisishailey.com",
+		"subtitle1": "Social Media Website",
+		"subtitle2": "E-commerce Website",
+		"subtitle3": "Portfolio Website",
+		"description1": "A social media platform for book lovers.\n- responsive design, dark mode\n- sign up & sign in by email or Google account\n- view and edit my account profile\n- view my posts and book reviews\n- view and remove likes and bookmarks\n- write, view and search posts\n- comment, like or bookmark posts\n- view current Bestsellers and New Arrivals\n- search, rate and review books\n- search bookstores and view the location on the map",
+		"description2": "- responsive design, dark mode\n- view & search products\n- view products by category and sort by price\n- add products to cart, change quantities, and checkout\n- safe sign up & sign in",
+		"description3": "The website you are viewing right now.\n- responsive design, dark mode\n- internationalization (English, Korean)\n- published on a custom domain\n- custom cursor and smooth animations"
 	},
 	"Contact": {
 		"title": "Contact", 
