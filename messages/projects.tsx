@@ -11,7 +11,7 @@ export const projects = [
             'Tiptap',
         ],
         back: [
-            'Firebase(Auth, Firestore, Storage)',
+            'Firebase',
             '알라딘 서점 API',
             '네이버 API',
             'Vercel',

@@ -43,7 +43,10 @@ export default function ProjectCard(props: ProjectCardProps) {
     ];
 
     return (
-        <div className="flex flex-col gap-2">
+        <div
+            id={`card${index + 1}`}
+            className="hidden flex flex-col gap-2 w-full mx-2"
+        >
             <div>
                 <h3>{subtitle}</h3>
                 <div className="flex items-center justify-between">
@@ -87,13 +90,18 @@ export default function ProjectCard(props: ProjectCardProps) {
                 ))}
             </div>
             {currentTap === 'stack' ? (
-                <ul className="flex flex-col">
+                <ul className="flex flex-col gap-2">
                     {techStack.map((stack) => (
-                        <li key={stack.key}>
-                            <span>{stack.name}</span>
-                            <div>
+                        <li key={stack.key} className="flex flex-col">
+                            <span className='hidden sm:block'>{stack.name}</span>
+                            <div className="flex flex-wrap">
                                 {project[stack.key].map((e) => (
-                                    <span key={e} className='mx-1 py-1.5 px-3 border rounded-full'>{e}</span>
+                                    <span
+                                        key={e}
+                                        className="m-1 py-1.5 px-3 border rounded-full text-xs sm:text-base"
+                                    >
+                                        {e}
+                                    </span>
                                 ))}
                             </div>
                         </li>

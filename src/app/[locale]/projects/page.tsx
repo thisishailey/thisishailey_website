@@ -5,6 +5,7 @@ import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
 import Meteors from '@/components/ui/background/meteors';
 import BottomNavButtons from '@/components/common/bottomNav';
+import Carousel from '@/components/common/carousel';
 import ProjectCard from '@/components/common/projectCard';
 
 export default function Projects({ params: { locale } }: Params) {
@@ -30,15 +31,17 @@ export default function Projects({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
-                {[1, 2, 3].map((i) => (
-                    <ProjectCard
-                        key={i}
-                        index={i - 1}
-                        title={t(`project${i}`)}
-                        subtitle={t(`subtitle${i}`)}
-                        description={t(`description${i}`)}
-                    />
-                ))}
+                <Carousel count={3}>
+                    {[1, 2, 3].map((i) => (
+                        <ProjectCard
+                            key={i}
+                            index={i - 1}
+                            title={t(`project${i}`)}
+                            subtitle={t(`subtitle${i}`)}
+                            description={t(`description${i}`)}
+                        />
+                    ))}
+                </Carousel>
                 <BottomNavButtons values={navValues} />
             </Main>
         </>
