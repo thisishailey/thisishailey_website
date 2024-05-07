@@ -23,7 +23,7 @@ export function LeftNavButton({ value, icon }: NavButtonProps) {
             onMouseLeave={CursorToNormal}
         >
             <motion.div
-                className="relative z-10 px-6 sm:px-8 py-3 sm:py-4 flex gap-2 sm:gap-3 items-center rounded-full shadow-lg border border-theme bg-theme-light dark:bg-theme-dark text-theme font-normal text-base sm:text-xl"
+                className="px-6 sm:px-8 py-3 sm:py-4 flex gap-2 sm:gap-3 items-center rounded-full shadow-lg border border-theme bg-theme-light dark:bg-theme-dark text-theme font-normal text-base sm:text-xl"
                 whileHover={{
                     color: 'var(--theme-light)',
                     backgroundColor: 'var(--theme)',
@@ -50,7 +50,7 @@ export function RightNavButton({ value, icon }: NavButtonProps) {
             onMouseLeave={CursorToNormal}
         >
             <motion.div
-                className="relative z-10 px-6 sm:px-8 py-3 sm:py-4 flex gap-2 sm:gap-3 items-center rounded-full shadow-lg border border-theme bg-theme-light dark:bg-theme-dark text-theme font-normal text-base sm:text-xl"
+                className="px-6 sm:px-8 py-3 sm:py-4 flex gap-2 sm:gap-3 items-center rounded-full shadow-lg border border-theme bg-theme-light dark:bg-theme-dark text-theme font-normal text-base sm:text-xl"
                 whileHover={{
                     color: 'var(--theme-light)',
                     backgroundColor: 'var(--theme)',

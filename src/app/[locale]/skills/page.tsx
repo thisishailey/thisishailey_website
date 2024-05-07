@@ -29,7 +29,7 @@ export default function Skills({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
-                <ul className="relative z-10 flex md:flex-col gap-2 md:gap-10 w-full max-w-3xl mx-6 overflow-x-auto py-4">
+                <ul className="flex md:flex-col gap-2 md:gap-10 w-full max-w-3xl mx-6 overflow-x-auto py-4">
                     {[1, 2, 3, 4].map((i) => (
                         <li key={i} className="flex flex-col md:flex-row gap-4 md:gap-0 items-center">
                             <h2 className="md:min-w-40 text-lg md:text-2xl font-medium">
