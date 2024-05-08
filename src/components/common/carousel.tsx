@@ -1,20 +1,19 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '../ui/icons';
 
 interface CarouselProps {
     children: React.ReactNode;
     count: number;
-    initial?: number;
 }
 
-export default function Carousel({
-    children,
-    count,
-    initial = 1,
-}: CarouselProps) {
+export default function Carousel({ children, count }: CarouselProps) {
+    const searchParams = useSearchParams();
+    const initial = parseInt(searchParams.get('project') || '0');
+    const { back } = useRouter();
     const [currentCard, setCurrentCard] = useState<number>(initial);
 
     useEffect(() => {
@@ -28,7 +27,7 @@ export default function Carousel({
     }, [currentCard]);
 
     const changeCard = (event: React.MouseEvent, toNext: boolean = true) => {
-        let index = 1;
+        let index = 0;
 
         if (toNext) {
             index = currentCard + 1;
@@ -40,10 +39,7 @@ export default function Carousel({
     };
 
     const closeCarousel = () => {
-        const $carousel = document.getElementById(
-            'project-carousel'
-        ) as HTMLDivElement;
-        $carousel.classList.add('hidden');
+        back();
     };
 
     return (
@@ -56,8 +52,8 @@ export default function Carousel({
             >
                 <CloseIcon />
             </button>
-            <div className="flex items-center gap-4 md:gap-10">
-                {currentCard > 1 ? (
+            <div className="flex items-center justify-center gap-4 md:gap-10">
+                {currentCard > 0 ? (
                     <button
                         className="sm:p-3 sm:pl-2.5 rounded sm:bg-theme/10"
                         onClick={(e) => changeCard(e, false)}
@@ -70,7 +66,7 @@ export default function Carousel({
                     <div className="box-content min-w-6 min-h-6 sm:p-3 sm:pl-2.5"></div>
                 )}
                 {children}
-                {currentCard < count ? (
+                {currentCard < count - 1 ? (
                     <button
                         className="sm:p-3 sm:pr-2.5 rounded sm:bg-theme/10"
                         onClick={changeCard}

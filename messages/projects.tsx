@@ -35,7 +35,7 @@ export const projects = [
         github: 'https://github.com/kfbkhw/my-store',
     },
     {
-        highlight: ['Next.js', 'next-intl', 'Tailwind CSS', 'Framer Motion'],
+        highlight: ['Next.js', 'next-intl', 'TailwindCSS', 'Framer Motion'],
         front: [
             'Next.js',
             'TypeScript',

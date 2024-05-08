@@ -50,31 +50,30 @@ export default function ProjectCard(props: ProjectCardProps) {
     ];
 
     return (
-        <div id={`card${index + 1}`} className="hidden space-y-2">
-            {/* <div className="snap-x snap-mandatory overflow-x-auto flex gap-6 w-full h-64">
-                <div className="snap-center snap-always w-80 h-64">
-                    <div className="relative w-80 h-64">
-                        <Image
-                            className="object-contain object-top"
-                            src={'/projects/1/1.png'}
-                            alt="project1"
-                            fill={true}
-                            sizes="(max-width: 400px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                        />
-                    </div>
-                </div>
-                <div className="snap-center snap-always w-80 h-64">
-                    <div className="relative w-80 h-64">
-                        <Image
-                            className="object-contain object-top"
-                            src={'/projects/1/2.png'}
-                            alt="project2"
-                            fill={true}
-                            sizes="(max-width: 400px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                        />
-                    </div>
-                </div>
-            </div> */}
+        <div id={`card${index}`} className="hidden space-y-2">
+            <div className="snap-x snap-mandatory overflow-x-auto overflow-y-hidden flex gap-6 h-[300px] max-w-72 xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
+                <Image
+                    className="snap-center snap-always min-w-[300px] min-h-[300px]"
+                    src={`/projects/${index}/0.png`}
+                    alt="project1"
+                    width={300}
+                    height={300}
+                />
+                <Image
+                    className="snap-center snap-always min-w-[300px] min-h-[300px]"
+                    src={`/projects/${index}/1.png`}
+                    alt="project2"
+                    width={300}
+                    height={300}
+                />
+                <Image
+                    className="snap-center snap-always min-w-[300px] min-h-[300px]"
+                    src={`/projects/${index}/1.png`}
+                    alt="project2"
+                    width={300}
+                    height={300}
+                />
+            </div>
             <div className="mb-2">
                 <h3 className="text-sm sm:text-base">{subtitle}</h3>
                 <div className="flex items-center justify-between">

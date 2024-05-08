@@ -5,10 +5,7 @@ import { cn } from '@/utils/cn';
 import Main from '@/components/common/wrapper';
 import Meteors from '@/components/ui/background/meteors';
 import BottomNavButtons from '@/components/common/bottomNav';
-import Carousel from '@/components/common/carousel';
-import ProjectCard from '@/components/ui/project/projectCard';
 import ProjectPreview from '@/components/ui/project/projectPreview';
-import Backdrop from '@/components/ui/project/backdrop';
 
 export default function Projects({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
@@ -45,21 +42,6 @@ export default function Projects({ params: { locale } }: Params) {
                 </div>
                 <BottomNavButtons values={navValues} />
             </Main>
-            <div id="project-carousel" className="hidden">
-                <Backdrop>
-                    <Carousel count={3}>
-                        {[1, 2, 3].map((i) => (
-                            <ProjectCard
-                                key={i}
-                                index={i - 1}
-                                title={t(`project${i}`)}
-                                subtitle={t(`subtitle${i}`)}
-                                description={t(`description${i}`)}
-                            />
-                        ))}
-                    </Carousel>
-                </Backdrop>
-            </div>
         </>
     );
 }
