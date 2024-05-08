@@ -1,14 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Ubuntu } from 'next/font/google';
-import { projects } from '../../../messages/projects';
+import { projects } from '../../../../messages/projects';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { GitHubIcon, OpenLinkIcon } from '@/components/ui/icons';
 import { cn } from '@/utils/cn';
 
 const ubuntu = Ubuntu({
-    weight: ['300', '400', '500', '700'],
+    weight: ['400', '500'],
     subsets: ['latin'],
 });
 
@@ -49,10 +50,31 @@ export default function ProjectCard(props: ProjectCardProps) {
     ];
 
     return (
-        <div
-            id={`card${index + 1}`}
-            className="hidden flex flex-col gap-2 w-full mx-2"
-        >
+        <div id={`card${index + 1}`} className="hidden space-y-2">
+            {/* <div className="snap-x snap-mandatory overflow-x-auto flex gap-6 w-full h-64">
+                <div className="snap-center snap-always w-80 h-64">
+                    <div className="relative w-80 h-64">
+                        <Image
+                            className="object-contain object-top"
+                            src={'/projects/1/1.png'}
+                            alt="project1"
+                            fill={true}
+                            sizes="(max-width: 400px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                        />
+                    </div>
+                </div>
+                <div className="snap-center snap-always w-80 h-64">
+                    <div className="relative w-80 h-64">
+                        <Image
+                            className="object-contain object-top"
+                            src={'/projects/1/2.png'}
+                            alt="project2"
+                            fill={true}
+                            sizes="(max-width: 400px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                        />
+                    </div>
+                </div>
+            </div> */}
             <div className="mb-2">
                 <h3 className="text-sm sm:text-base">{subtitle}</h3>
                 <div className="flex items-center justify-between">
@@ -111,11 +133,11 @@ export default function ProjectCard(props: ProjectCardProps) {
                             >
                                 {stack.name}
                             </span>
-                            <div className="flex flex-wrap">
+                            <div className="flex flex-wrap gap-2">
                                 {project[stack.key].map((e) => (
                                     <span
                                         key={e}
-                                        className={`m-1 py-1.5 px-3 border rounded-full text-xs sm:text-base ${ubuntu.className}`}
+                                        className={`py-1 px-3 border rounded-full text-xs sm:text-base ${ubuntu.className}`}
                                     >
                                         {e}
                                     </span>
