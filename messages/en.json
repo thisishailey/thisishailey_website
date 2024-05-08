@@ -52,7 +52,8 @@
 		"subtitle3": "Portfolio Website",
 		"description1": "A social media platform for book lovers.\n- responsive design, dark mode\n- sign up & sign in by email or Google account\n- My Account: edit profile, view & delete my posts∙reviews∙likes∙bookmarks\n- Posts: write, search, comment, like or bookmark\n- view current Bestsellers and New Arrivals\n- Books: search, rate and review\n- Bookstore: search and view the location on the map",
 		"description2": "- responsive design, dark mode\n- view & search products\n- view products by category and sort by price\n- add products to cart, change quantities, and checkout\n- safe sign up & sign in with token-based authentication",
-		"description3": "The website you are viewing right now.\n- responsive design, dark mode\n- internationalization (English, Korean)\n- published on a custom domain\n- smooth animations and custom cursor"
+		"description3": "The website you are viewing right now.\n- responsive design, dark mode\n- internationalization (English, Korean)\n- published on a custom domain\n- smooth animations and custom cursor",
+		"close": "Close"
 	},
 	"Contact": {
 		"title": "Contact", 

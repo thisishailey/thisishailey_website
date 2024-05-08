@@ -50,8 +50,11 @@ export default function ProjectCard(props: ProjectCardProps) {
     ];
 
     return (
-        <div id={`card${index}`} className="hidden space-y-2">
-            <div className="snap-x snap-mandatory overflow-x-auto overflow-y-hidden flex gap-6 h-[300px] max-w-72 xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
+        <div
+            id={`card${index}`}
+            className="hidden space-y-4 w-full max-w-72 xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
+        >
+            <div className="hidden sm:flex gap-6 snap-x snap-mandatory overflow-x-auto overflow-y-hidden h-[300px] max-w-72 xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
                 <Image
                     className="snap-center snap-always min-w-[300px] min-h-[300px]"
                     src={`/projects/${index}/0.png`}
@@ -68,7 +71,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                 />
                 <Image
                     className="snap-center snap-always min-w-[300px] min-h-[300px]"
-                    src={`/projects/${index}/1.png`}
+                    src={`/projects/${index}/2.gif`}
                     alt="project2"
                     width={300}
                     height={300}
@@ -136,7 +139,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                                 {project[stack.key].map((e) => (
                                     <span
                                         key={e}
-                                        className={`py-1 px-3 border rounded-full text-xs sm:text-base ${ubuntu.className}`}
+                                        className={`py-1 px-3 border border-theme-dark/70 dark:border-theme-light/70 rounded-full text-xs sm:text-base ${ubuntu.className}`}
                                     >
                                         {e}
                                     </span>

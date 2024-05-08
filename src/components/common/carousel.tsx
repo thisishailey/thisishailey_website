@@ -8,9 +8,10 @@ import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '../ui/icons';
 interface CarouselProps {
     children: React.ReactNode;
     count: number;
+    close: string;
 }
 
-export default function Carousel({ children, count }: CarouselProps) {
+export default function Carousel({ children, count, close }: CarouselProps) {
     const searchParams = useSearchParams();
     const initial = parseInt(searchParams.get('project') || '0');
     const { back } = useRouter();
@@ -43,13 +44,14 @@ export default function Carousel({ children, count }: CarouselProps) {
     };
 
     return (
-        <div className="flex flex-col w-full max-w-4xl px-4">
+        <div className="flex flex-col w-full max-w-4xl mt-4 sm:mt-0 px-2 pt-2 pb-10 bg-theme/10">
             <button
-                className="self-end mb-2 p-3"
+                className="flex items-center justify-end gap-2 mb-2 p-3"
                 onClick={closeCarousel}
                 onMouseOver={CursorToPointer}
                 onMouseLeave={CursorToNormal}
             >
+                {close}
                 <CloseIcon />
             </button>
             <div className="flex items-center justify-center gap-4 md:gap-10">
