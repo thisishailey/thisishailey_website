@@ -8,7 +8,6 @@ export const projects = [
             'Emotion',
             'Recoil',
             'Context API',
-            'Tiptap',
         ],
         back: [
             'Firebase',

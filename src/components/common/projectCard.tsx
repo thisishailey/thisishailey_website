@@ -1,10 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { Ubuntu } from 'next/font/google';
 import { projects } from '../../../messages/projects';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { GitHubIcon, OpenLinkIcon } from '@/components/ui/icons';
 import { cn } from '@/utils/cn';
+
+const ubuntu = Ubuntu({
+    weight: ['300', '400', '500', '700'],
+    subsets: ['latin'],
+});
 
 interface ProjectCardProps {
     index: number;
@@ -47,10 +53,14 @@ export default function ProjectCard(props: ProjectCardProps) {
             id={`card${index + 1}`}
             className="hidden flex flex-col gap-2 w-full mx-2"
         >
-            <div>
-                <h3>{subtitle}</h3>
+            <div className="mb-2">
+                <h3 className="text-sm sm:text-base">{subtitle}</h3>
                 <div className="flex items-center justify-between">
-                    <h2 className="font-medium text-2xl">{title}</h2>
+                    <h2
+                        className={`font-medium text-xl sm:text-2xl ${ubuntu.className}`}
+                    >
+                        {title}
+                    </h2>
                     <div className="flex gap-6">
                         <a
                             href={project.github}
@@ -73,13 +83,16 @@ export default function ProjectCard(props: ProjectCardProps) {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-around">
+            <div className="flex my-2">
                 {tapButtons.map((tap) => (
                     <button
                         key={tap.id}
                         className={cn(
-                            'border-b uppercase',
-                            currentTap === tap.id && 'border-theme'
+                            'w-full py-2 border-b-2 uppercase text-center text-sm sm:text-lg transition-colors duration-200',
+                            ubuntu.className,
+                            currentTap === tap.id
+                                ? 'border-theme bg-theme/20 text-theme font-medium'
+                                : 'border-theme-dark/10 dark:border-theme-light/10 text-theme-dark/80 dark:text-theme-light/80'
                         )}
                         onClick={() => changeTap(tap.id)}
                         onMouseOver={CursorToPointer}
@@ -93,12 +106,16 @@ export default function ProjectCard(props: ProjectCardProps) {
                 <ul className="flex flex-col gap-2">
                     {techStack.map((stack) => (
                         <li key={stack.key} className="flex flex-col">
-                            <span className='hidden sm:block'>{stack.name}</span>
+                            <span
+                                className={`hidden sm:block ${ubuntu.className}`}
+                            >
+                                {stack.name}
+                            </span>
                             <div className="flex flex-wrap">
                                 {project[stack.key].map((e) => (
                                     <span
                                         key={e}
-                                        className="m-1 py-1.5 px-3 border rounded-full text-xs sm:text-base"
+                                        className={`m-1 py-1.5 px-3 border rounded-full text-xs sm:text-base ${ubuntu.className}`}
                                     >
                                         {e}
                                     </span>
@@ -108,7 +125,9 @@ export default function ProjectCard(props: ProjectCardProps) {
                     ))}
                 </ul>
             ) : (
-                <p className="whitespace-pre-line">{description}</p>
+                <p className="whitespace-pre-line text-sm sm:text-lg">
+                    {description}
+                </p>
             )}
         </div>
     );
