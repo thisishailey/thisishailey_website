@@ -4,17 +4,20 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon } from '../ui/icons';
+import { cn } from '@/utils/cn';
 
 interface CarouselProps {
     children: React.ReactNode;
+    className: string;
     count: number;
-    close: string;
+    close?: string;
 }
 
-export default function Carousel({ children, count, close }: CarouselProps) {
+export default function Carousel(props: CarouselProps) {
+    const { children, className, count, close } = props;
+    const { back } = useRouter();
     const searchParams = useSearchParams();
     const initial = parseInt(searchParams.get('project') || '0');
-    const { back } = useRouter();
     const [currentCard, setCurrentCard] = useState<number>(initial);
 
     useEffect(() => {
@@ -44,16 +47,23 @@ export default function Carousel({ children, count, close }: CarouselProps) {
     };
 
     return (
-        <div className="flex flex-col w-full max-w-4xl mt-4 sm:mt-0 px-2 pt-2 pb-10 bg-theme/10">
-            <button
-                className="flex items-center justify-end gap-2 mb-2 p-3"
-                onClick={closeCarousel}
-                onMouseOver={CursorToPointer}
-                onMouseLeave={CursorToNormal}
-            >
-                {close}
-                <CloseIcon />
-            </button>
+        <div
+            className={cn(
+                'flex flex-col w-full max-w-4xl bg-theme/10',
+                className
+            )}
+        >
+            {close && (
+                <button
+                    className="flex items-center justify-end gap-2 mb-2 p-3"
+                    onClick={closeCarousel}
+                    onMouseOver={CursorToPointer}
+                    onMouseLeave={CursorToNormal}
+                >
+                    {close}
+                    <CloseIcon />
+                </button>
+            )}
             <div className="flex items-center justify-center gap-4 md:gap-10">
                 {currentCard > 0 ? (
                     <button

@@ -16,7 +16,11 @@ export default function ProjectsDetail({ params: { locale } }: Params) {
             <Meteors number={50} />
             <Main>
                 <Suspense fallback={<div>{'Loading...'}</div>}>
-                    <Carousel count={3} close={t('close')}>
+                    <Carousel
+                        count={3}
+                        close={t('close')}
+                        className="mt-4 sm:mt-0 px-2 pt-2 pb-10"
+                    >
                         {[1, 2, 3].map((i) => (
                             <ProjectCard
                                 key={i}
