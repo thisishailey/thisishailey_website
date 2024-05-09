@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { Ubuntu } from 'next/font/google';
 import { projects } from '../../../../messages/projects';
 import { CursorToNormal, CursorToPointer } from '@/components/common/cursor';
 import { GitHubIcon, OpenLinkIcon } from '@/components/ui/icons';
 import { cn } from '@/utils/cn';
+import ProjectCardImages from './projectImages';
 
 const ubuntu = Ubuntu({
     weight: ['400', '500'],
@@ -55,27 +55,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             className="hidden space-y-4 w-full max-w-72 xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl"
         >
             <div className="hidden sm:flex gap-6 snap-x snap-mandatory overflow-x-auto overflow-y-hidden h-[300px] max-w-72 xs:max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
-                <Image
-                    className="snap-center snap-always min-w-[300px] min-h-[300px]"
-                    src={`/projects/${index}/0.png`}
-                    alt="project1"
-                    width={300}
-                    height={300}
-                />
-                <Image
-                    className="snap-center snap-always min-w-[300px] min-h-[300px]"
-                    src={`/projects/${index}/1.png`}
-                    alt="project2"
-                    width={300}
-                    height={300}
-                />
-                <Image
-                    className="snap-center snap-always min-w-[300px] min-h-[300px]"
-                    src={`/projects/${index}/2.gif`}
-                    alt="project2"
-                    width={300}
-                    height={300}
-                />
+                <ProjectCardImages index={index} />
             </div>
             <div className="mb-2">
                 <h3 className="text-sm sm:text-base">{subtitle}</h3>

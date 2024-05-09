@@ -28,7 +28,7 @@ export default function ProjectPreview(props: ProjectPreviewProps) {
 
     return (
         <div
-            className="w-full p-2 space-y-2 rounded bg-theme/20 dark:bg-theme-light/10"
+            className="w-full p-2 space-y-2 rounded bg-theme/20"
             onClick={openCarousel}
             onMouseOver={CursorToPointer}
             onMouseLeave={CursorToNormal}
