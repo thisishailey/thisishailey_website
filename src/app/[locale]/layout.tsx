@@ -6,6 +6,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { locales } from '../../../intl.config';
 import type { Params } from '@/types/param';
 import { cn } from '@/utils/cn';
+import InitialTransition from '@/components/common/transition';
 import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
 import Cursor from '@/components/common/cursor';
@@ -46,6 +47,7 @@ export default function RootLayout({ children, params: { locale } }: Props) {
                 )}
             >
                 <Theme>
+                    <InitialTransition />
                     <Header />
                     {children}
                     <Cursor />

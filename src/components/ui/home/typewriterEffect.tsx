@@ -14,7 +14,7 @@ export default function TypewriterEffect({ sentences }: TypewriterEffectProps) {
     useEffect(() => {
         setTimeout(() => {
             setIsTyping(true);
-        }, 2500);
+        }, 1500);
     }, []);
 
     const variants = {
@@ -24,7 +24,7 @@ export default function TypewriterEffect({ sentences }: TypewriterEffectProps) {
             width: 'fit-content',
             transition: {
                 duration: 0.6,
-				type: 'tween'
+                type: 'tween',
             },
         },
         erase: {
