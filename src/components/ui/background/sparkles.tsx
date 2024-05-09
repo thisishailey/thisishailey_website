@@ -5,17 +5,21 @@ import { motion, useAnimation } from 'framer-motion';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import type { Container, SingleOrMultiple } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
+import InitialTransition from '@/components/common/transition';
 
 export default function Sparkles() {
     return (
-        <div className="fixed z-[-10] w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
-            <SparklesCore
-                minSize={0.6}
-                maxSize={1.4}
-                particleDensity={100}
-                particleColor="#9290C3"
-            />
-        </div>
+        <>
+            <InitialTransition />
+            <div className="fixed z-[-10] w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
+                <SparklesCore
+                    minSize={0.6}
+                    maxSize={1.4}
+                    particleDensity={100}
+                    particleColor="#9290C3"
+                />
+            </div>
+        </>
     );
 }
 
