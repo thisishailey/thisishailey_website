@@ -1,5 +1,5 @@
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { useMessages, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import type { Params } from '@/types/param';
 import AuroraBackground from '@/components/ui/background/aurora';
 import TypewriterEffect from '@/components/ui/home/typewriterEffect';
@@ -9,11 +9,6 @@ import { cn } from '@/utils/cn';
 export default function Home({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
     const t = useTranslations('Home');
-
-    const description = useTranslations('Description');
-    const messages = useMessages();
-    const keys = Object.keys(messages.Description);
-    const sentences = keys.map((key) => description(key));
 
     return (
         <AuroraBackground>
@@ -30,7 +25,7 @@ export default function Home({ params: { locale } }: Params) {
                     {t('title')}
                 </h1>
             </div>
-            <TypewriterEffect sentences={sentences} />
+            <TypewriterEffect sentence={t('description')} language={locale} />
             <DownloadCVButton text={t('download')} filename={t('resume')} />
         </AuroraBackground>
     );

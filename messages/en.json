@@ -19,13 +19,9 @@
 	"Home": {
 		"subtitle": "FE Developer",
 		"title": "Hailey Kim",
+		"description": "Turn creative ideas into engaging websites.",
 		"download": "Download CV",
 		"resume": "Resume_HaileyKim"
-	},
-	"Description": {
-		"0": "Turn creative ideas into engaging websites.", 
-		"1": "",
-		"2": ""
 	},
 	"About": {
 		"title": "About", 

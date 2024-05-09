@@ -1,66 +1,60 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface TypewriterEffectProps {
-    sentences: string[];
+    sentence: string;
+    language: string;
 }
 
-export default function TypewriterEffect({ sentences }: TypewriterEffectProps) {
-    const [isTyping, setIsTyping] = useState<boolean>(false);
-    const [currentSentence, setCurrentSentence] = useState<number>(0);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setIsTyping(true);
-        }, 1500);
-    }, []);
-
-    const variants = {
-        type: {
-            display: 'inline-block',
-            opacity: 1,
-            width: 'fit-content',
-            transition: {
-                duration: 0.6,
-                type: 'tween',
-            },
-        },
-        erase: {
-            display: 'none',
-            opacity: 0,
-        },
-    };
-
+export default function TypewriterEffect({
+    sentence,
+    language,
+}: TypewriterEffectProps) {
     return (
         <div className="text-3xl sm:text-4xl lg:text-5xl font-medium text-center">
             <motion.div
-                initial={'erase'}
-                animate={isTyping ? 'type' : 'erase'}
+                initial="initial"
+                animate="animate"
                 variants={{
-                    type: {
+                    initial: { display: 'none' },
+                    animate: {
                         display: 'inline',
-                        transition: { staggerChildren: 0.13 },
-                    },
-                    erase: {
-                        display: 'none',
+                        transition: {
+                            delay: 1.6,
+                            when: 'beforeChildren',
+                            staggerChildren: language === 'en' ? 0.1 : 0.13,
+                        },
                     },
                 }}
             >
-                {sentences[currentSentence].split(' ').map((word, idx) => (
-                    <motion.div key={`word-${idx}`} className="inline-block">
+                {sentence.split(' ').map((word, idx) => (
+                    <div key={`word-${idx}`} className="inline-block">
                         {word.split('').map((char, index) => (
                             <motion.span
                                 key={`char-${index}`}
                                 className="text-theme-dark dark:text-theme-light opacity-0 hidden"
-                                variants={variants}
+                                variants={{
+                                    initial: {
+                                        display: 'none',
+                                        opacity: 0,
+                                    },
+                                    animate: {
+                                        display: 'inline-block',
+                                        opacity: 1,
+                                        width: 'fit-content',
+                                        transition: {
+                                            duration: 0.5,
+                                            ease: 'linear',
+                                        },
+                                    },
+                                }}
                             >
                                 {char}
                             </motion.span>
                         ))}
                         &nbsp;
-                    </motion.div>
+                    </div>
                 ))}
             </motion.div>
             <Cursor />

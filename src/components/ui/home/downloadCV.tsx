@@ -25,7 +25,7 @@ export default function DownloadCVButton({ text, filename }: DownloadCVProps) {
                 opacity: 1,
                 y: 0,
                 transition: {
-                    delay: 7,
+                    delay: 4.5,
                     duration: 0.8,
                     ease: 'easeInOut',
                 },
