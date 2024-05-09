@@ -22,6 +22,7 @@ export default function ProjectCardImages({ index }: { index: number }) {
                     alt={`project${index} image${i}`}
                     width={300}
                     height={300}
+                    unoptimized={src.includes('gif')}
                 />
             ))}
         </>
