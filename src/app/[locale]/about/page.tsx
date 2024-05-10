@@ -29,8 +29,14 @@ export default function About({ params: { locale } }: Params) {
                 >
                     {t('title')}
                 </h1>
-                <p className="max-w-3xl mx-auto px-6 !leading-loose text-lg sm:text-2xl whitespace-pre-line">
-                    {t('content')}
+                <p className="max-w-3xl mx-auto text-center !leading-[1.8] sm:!leading-loose text-lg sm:text-2xl whitespace-pre-line">
+                    {t.rich('content', {
+                        b: (chunks) => (
+                            <span className="text-theme font-bold">
+                                {chunks}
+                            </span>
+                        ),
+                    })}
                 </p>
                 <BottomNavButtons values={navValues} />
             </Main>

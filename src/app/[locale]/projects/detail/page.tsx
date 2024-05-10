@@ -7,7 +7,7 @@ import Meteors from '@/components/ui/background/meteors';
 import Carousel from '@/components/common/carousel';
 import ProjectCard from '@/components/ui/project/projectCard';
 import Loading from '@/components/common/loading';
-import { PageTransition } from '@/components/common/transition';
+import InitialTransition from '@/components/common/transition';
 
 export default function ProjectsDetail({ params: { locale } }: Params) {
     unstable_setRequestLocale(locale);
@@ -15,7 +15,7 @@ export default function ProjectsDetail({ params: { locale } }: Params) {
 
     return (
         <>
-            <PageTransition />
+            <InitialTransition />
             <Meteors number={50} />
             <Main>
                 <Suspense fallback={<Loading />}>
