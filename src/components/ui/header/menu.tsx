@@ -65,13 +65,9 @@ export default function Menu({ localeValues }: MenuProps) {
   }, [isOpen]);
 
   return (
-    <div className="flex gap-2 xs:gap-5 sm:gap-10">
-      {isOpen && (
-        <>
-          <LocaleButton localeValues={localeValues} isOpen={isOpen} />
-          <ThemeButton isOpen={isOpen} />
-        </>
-      )}
+    <div className="flex gap-2 xs:gap-5 sm:gap-8">
+      <LocaleButton localeValues={localeValues} />
+      <ThemeButton />
       <MenuButton isOpen={isOpen} toggleMenu={toggleMenu} />
     </div>
   );

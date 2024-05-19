@@ -23,7 +23,6 @@ export default function MenuNavigation({ items }: MenuNavProps) {
     return (
         <motion.nav
             id="menu"
-            initial={{ display: 'none' }}
             className="fixed z-30 w-screen h-screen bg-theme"
         >
             <ul
