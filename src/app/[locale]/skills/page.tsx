@@ -27,7 +27,7 @@ export default function Skills({ params: { locale } }: Params) {
             <Main>
                 <h1
                     className={cn(
-                        'mt-14 sm:mt-0 text-5xl sm:text-6xl',
+                        'mt-14 text-5xl sm:text-6xl',
                         locale === 'en' ? 'font-logo' : 'font-cafe'
                     )}
                 >
