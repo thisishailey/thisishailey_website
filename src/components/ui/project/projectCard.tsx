@@ -17,13 +17,14 @@ interface ProjectPreviewProps {
   index: number;
   title: string;
   subtitle: string;
-  description: string;
+  overview: React.ReactNode;
+  features: string;
 }
 
 type ProjectCardTaps = "preview" | "overview" | "desc";
 
 export default function ProjectCard(props: ProjectPreviewProps) {
-  const { index, title, subtitle, description } = props;
+  const { index, title, subtitle, overview, features } = props;
   const project = projects[index];
 
   const [currentTap, setCurrentTap] = useState<ProjectCardTaps>("preview");
@@ -55,14 +56,24 @@ export default function ProjectCard(props: ProjectPreviewProps) {
 
   return (
     <div className="max-w-6xl w-screen p-6 space-y-4 rounded bg-theme/20">
-      <div className="flex items-center gap-10 pb-4 border-b-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
+      <div className="flex items-center gap-14 pb-4 border-b-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
         <div>
           <h3 className="text-sm sm:text-lg">{subtitle}</h3>
-          <h2 className={`font-medium text-xl sm:text-2xl ${ubuntu.className}`}>
-            {title}
-          </h2>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer noopener"
+            onMouseOver={CursorToPointer}
+            onMouseLeave={CursorToNormal}
+          >
+            <h2
+              className={`font-medium text-xl sm:text-2xl ${ubuntu.className}`}
+            >
+              {title}
+            </h2>
+          </a>
         </div>
-        <div className="flex gap-6">
+        <div className="flex gap-8">
           <a
             href={project.github}
             target="_blank"
@@ -122,11 +133,14 @@ export default function ProjectCard(props: ProjectPreviewProps) {
         </>
       ) : currentTap === "overview" ? (
         <>
-          <ul className="flex flex-col gap-2">
+          <p className="whitespace-pre-line text-sm sm:text-lg">{overview}</p>
+          <ul className="flex flex-col gap-2 pt-4 border-t-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
             {techStack.map((stack) => (
-              <li key={stack.key} className="flex flex-col">
-                <span className={`hidden sm:block ${ubuntu.className}`}>
-                  {stack.name}
+              <li key={stack.key} className="flex items-center gap-4">
+                <span
+                  className={`hidden sm:block font-medium text-lg ${ubuntu.className}`}
+                >
+                  {`${stack.name}`}
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {project[stack.key].map((e) => (
@@ -144,9 +158,7 @@ export default function ProjectCard(props: ProjectPreviewProps) {
         </>
       ) : (
         <>
-          <p className="whitespace-pre-line text-sm sm:text-lg">
-            {description}
-          </p>
+          <p className="whitespace-pre-line text-sm sm:text-lg">{features}</p>
         </>
       )}
     </div>

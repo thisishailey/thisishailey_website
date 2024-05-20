@@ -37,7 +37,8 @@ export default function Projects({ params: { locale } }: Params) {
               index={i - 1}
               title={t(`project${i}`)}
               subtitle={t(`subtitle${i}`)}
-              description={t(`description${i}`)}
+              overview={t.rich(`overview${i}`, {b: (chunks)=> <span className="font-semibold">{chunks}</span>})}
+              features={t(`features${i}`)}
             />
           ))}
         </div>
