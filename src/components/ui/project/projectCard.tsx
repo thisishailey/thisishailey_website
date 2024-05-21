@@ -56,63 +56,63 @@ export default function ProjectCard(props: ProjectPreviewProps) {
 
   return (
     <div className="max-w-6xl w-screen p-6 space-y-4 rounded bg-theme/20">
-      <div className="flex items-center gap-14 pb-4 border-b-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
-        <div>
-          <h3 className="text-sm sm:text-lg">{subtitle}</h3>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer noopener"
-            onMouseOver={CursorToPointer}
-            onMouseLeave={CursorToNormal}
-          >
-            <h2
-              className={`font-medium text-xl sm:text-2xl ${ubuntu.className}`}
+      <div className="flex flex-col md:flex-row justify-between gap-4 pb-4 border-b-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
+        <div className="flex items-center gap-14">
+          <div>
+            <h3 className="text-sm sm:text-lg">{subtitle}</h3>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer noopener"
+              onMouseOver={CursorToPointer}
+              onMouseLeave={CursorToNormal}
             >
-              {title}
-            </h2>
-          </a>
-        </div>
-        <div className="flex gap-8">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer noopener"
-            onMouseOver={CursorToPointer}
-            onMouseLeave={CursorToNormal}
-          >
-            <GitHubIcon />
-          </a>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer noopener"
-            onMouseOver={CursorToPointer}
-            onMouseLeave={CursorToNormal}
-          >
-            <OpenLinkIcon />
-          </a>
-        </div>
-        <div className="grow flex justify-end">
-          <div className="flex rounded-full border border-theme-dark/80 dark:border-theme-light/80">
-            {tapButtons.map((tap) => (
-              <button
-                key={tap.id}
-                className={cn(
-                  "w-40 p-2 rounded-full uppercase text-center text-sm sm:text-base transition-colors duration-200",
-                  ubuntu.className,
-                  currentTap === tap.id
-                    ? "bg-theme/80"
-                    : "text-theme-dark/80 dark:text-theme-light/80"
-                )}
-                onClick={() => changeTap(tap.id)}
-                onMouseOver={CursorToPointer}
-                onMouseLeave={CursorToNormal}
+              <h2
+                className={`font-medium text-xl sm:text-2xl ${ubuntu.className}`}
               >
-                {tap.name}
-              </button>
-            ))}
+                {title}
+              </h2>
+            </a>
           </div>
+          <div className="flex gap-8">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer noopener"
+              onMouseOver={CursorToPointer}
+              onMouseLeave={CursorToNormal}
+            >
+              <GitHubIcon />
+            </a>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer noopener"
+              onMouseOver={CursorToPointer}
+              onMouseLeave={CursorToNormal}
+            >
+              <OpenLinkIcon />
+            </a>
+          </div>
+        </div>
+        <div className="self-center flex rounded-full border border-theme-dark/80 dark:border-theme-light/80">
+          {tapButtons.map((tap) => (
+            <button
+              key={tap.id}
+              className={cn(
+                "w-28 md:w-40 p-2 rounded-full uppercase text-center text-sm sm:text-base transition-colors duration-200",
+                ubuntu.className,
+                currentTap === tap.id
+                  ? "bg-theme/80"
+                  : "text-theme-dark/80 dark:text-theme-light/80"
+              )}
+              onClick={() => changeTap(tap.id)}
+              onMouseOver={CursorToPointer}
+              onMouseLeave={CursorToNormal}
+            >
+              {tap.name}
+            </button>
+          ))}
         </div>
       </div>
       {currentTap === "preview" ? (
