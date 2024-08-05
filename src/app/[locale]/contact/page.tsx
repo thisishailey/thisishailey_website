@@ -22,7 +22,7 @@ export default function Contact({ params: { locale } }: Params) {
     return (
         <>
             <Sparkles />
-            <Main>
+            <Main singlePage>
                 <h1
                     className={cn(
                         'mt-14 text-5xl sm:text-6xl',
