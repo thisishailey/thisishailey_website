@@ -25,7 +25,7 @@ export default function Contact({ params: { locale } }: Params) {
       <Main singlePage>
         <h2
           className={cn(
-            "mt-14 text-5xl sm:text-6xl",
+            "text-5xl sm:text-6xl",
             locale === "en" ? "font-logo" : "font-cafe"
           )}
         >
@@ -55,8 +55,8 @@ export default function Contact({ params: { locale } }: Params) {
             </li>
           ))}
         </ul>
-        <BottomNavigation values={navValues} />
       </Main>
+      <BottomNavigation values={navValues} />
     </>
   );
 }
