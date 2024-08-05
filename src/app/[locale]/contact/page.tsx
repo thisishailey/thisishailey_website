@@ -23,14 +23,14 @@ export default function Contact({ params: { locale } }: Params) {
         <>
             <Sparkles />
             <Main singlePage>
-                <h1
+                <h2
                     className={cn(
                         'mt-14 text-5xl sm:text-6xl',
                         locale === 'en' ? 'font-logo' : 'font-cafe'
                     )}
                 >
                     {t('title')}
-                </h1>
+                </h2>
                 <ul className="flex flex-col gap-6 sm:gap-10 divide-y-2 text-lg xs:text-xl sm:text-2xl">
                     {contactInfo.map((info) => (
                         <li

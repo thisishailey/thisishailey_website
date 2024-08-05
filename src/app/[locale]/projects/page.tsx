@@ -22,14 +22,14 @@ export default function Projects({ params: { locale } }: Params) {
     <>
       <Meteors number={50} />
       <Main>
-        <h1
+        <h2
           className={cn(
             "mt-14 text-5xl sm:text-6xl",
             locale === "en" ? "font-logo" : "font-cafe"
           )}
         >
           {t("title")}
-        </h1>
+        </h2>
         <div className="flex flex-col gap-4">
           {[1, 2, 3].map((i) => (
             <ProjectCard

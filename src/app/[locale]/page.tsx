@@ -16,17 +16,17 @@ export default function Home({ params: { locale } }: Params) {
   return (
     <AuroraBackground>
       <div className="space-y-4 sm:space-y-8 mt-6 xs:mt-12">
-        <h2 className="w-max mx-auto text-xl sm:text-2xl lg:text-3xl font-medium opacity-80 text-theme-dark dark:text-theme-light">
+        <h3 className="w-max mx-auto text-xl sm:text-2xl lg:text-3xl font-medium opacity-80 text-theme-dark dark:text-theme-light">
           {t("subtitle")}
-        </h2>
-        <h1
+        </h3>
+        <h2
           className={cn(
             "w-max mx-auto text-7xl sm:text-8xl lg:text-9xl text-theme-dark dark:text-theme-light",
             locale === "en" ? "font-logo" : "font-cafe"
           )}
         >
           {t("title")}
-        </h1>
+        </h2>
       </div>
       <TypewriterEffect sentence={t("description")} language={locale} />
       <div className="space-x-3 sm:space-x-8">

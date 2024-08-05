@@ -25,14 +25,14 @@ export default function Skills({ params: { locale } }: Params) {
         <>
             <Meteors number={50} />
             <Main>
-                <h1
+                <h2
                     className={cn(
                         'mt-14 text-5xl sm:text-6xl',
                         locale === 'en' ? 'font-logo' : 'font-cafe'
                     )}
                 >
                     {t('title')}
-                </h1>
+                </h2>
                 <Suspense fallback={<Loading />}>
                     <Carousel count={4} className="p-4">
                         {[1, 2, 3, 4].map((i) => (

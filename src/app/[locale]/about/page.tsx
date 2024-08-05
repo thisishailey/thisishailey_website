@@ -21,14 +21,14 @@ export default function About({ params: { locale } }: Params) {
         <>
             <Sparkles />
             <Main singlePage>
-                <h1
+                <h2
                     className={cn(
                         'mt-14 text-5xl sm:text-6xl',
                         locale === 'en' ? 'font-logo' : 'font-cafe'
                     )}
                 >
                     {t('title')}
-                </h1>
+                </h2>
                 <p className="max-w-3xl mx-auto text-center !leading-[1.8] sm:!leading-loose text-lg sm:text-2xl whitespace-pre-line">
                     {t.rich('content', {
                         b: (chunks) => (
