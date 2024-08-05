@@ -20,11 +20,11 @@ export default function Menu({ localeValues }: MenuProps) {
     const rect = (
       document.getElementById("menu-button") as HTMLButtonElement
     ).getBoundingClientRect();
-    const x = rect.x + 24;
-    const y = rect.y + 24;
-    const clientWidth = document.body.clientWidth;
-    const clientHeight = document.body.clientHeight;
-    const clip = Math.max(clientHeight, clientWidth) + 500;
+    const x = rect.x + rect.width / 2;
+    const y = rect.y + rect.height / 2;
+    const clientWidth = document.documentElement.clientWidth;
+    const clientHeight = document.documentElement.clientHeight;
+    const clip = Math.max(clientHeight, clientWidth) * 2;
 
     if (isOpen) {
       animate(
@@ -51,7 +51,7 @@ export default function Menu({ localeValues }: MenuProps) {
         "#menu",
         {
           display: "none",
-          clipPath: `circle(0 at ${x}px ${y}px)`,
+          clipPath: `circle(0px at ${x}px ${y}px)`,
         },
         {
           delay: 0.4,
