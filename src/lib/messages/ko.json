@@ -22,7 +22,7 @@
 		"description": "실용적이고 감각적인 웹사이트를 만듭니다.",
 		"download": "이력서 다운로드", 
 		"more": "더 알아보기",
-		"resume": "이력서_김혜원"
+		"resume": "김혜원의 이력서"
 	},
 	"About": {
 		"title": "소개", 
@@ -32,7 +32,7 @@
 		"title": "기술스택",
 		"category1": "프론트엔드",
 		"category2": "백엔드",
-		"category3": "다른 기술",
+		"category3": "협업/생산성",
 		"category4": "자격증",
 		"content1": "<s>HTML</s><s>CSS</s><s>JavaScript</s><sb>TypeScript</sb><sb>React</sb><sb>Next.js</sb><s>Vite</s><sb>Recoil</sb><s>Zustand</s><sb>Tailwind CSS</sb><sb>Material UI</sb><s>Emotion</s><s>styled-components</s><s>Bootstrap</s><s>SCSS</s>",
 		"content2": "<sb>Firebase</sb><sb>Vercel</sb><s>Netlify</s><s>MySQL</s><s>Python</s>",
@@ -56,8 +56,6 @@
 	},
 	"Contact": {
 		"title": "연락처", 
-		"section1": "get in touch",
-		"section2": "더 알아보기",
 		"email": "이메일", 
 		"github": "깃허브", 
 		"blog": "블로그"
