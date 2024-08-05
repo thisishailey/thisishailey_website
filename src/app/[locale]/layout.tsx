@@ -1,15 +1,15 @@
-import "@/styles/globals.css";
-import Theme from "@/styles/theme";
-import { Ubuntu } from "next/font/google";
 import favicon from "../../../public/favicon.ico";
+import { locales } from "../../../intl.config.mjs";
+import { Ubuntu } from "next/font/google";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
-import { locales } from "../../../intl.config";
-import type { Params } from "@/types/param";
-import { cn } from "@/utils/cn";
-import InitialTransition from "@/components/common/transition";
-import Header from "@/components/common/header";
-import Footer from "@/components/common/footer";
-import Cursor from "@/components/common/cursor";
+import "@/lib/styles/globals.css";
+import Theme from "@/lib/styles/theme";
+import type { Params } from "@/lib/types/param";
+import { cn } from "@/lib/utils";
+import InitialTransition from "@/components/common/InitialTransition";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
+import Cursor from "@/components/common/Cursor";
 
 export const dynamicParams = false;
 export function generateStaticParams() {

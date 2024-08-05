@@ -2,8 +2,8 @@
 
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { CursorToNormal, CursorToPointer } from "../../common/cursor";
-import { MoonIcon, SunIcon } from "../icons";
+import { CursorToNormal, CursorToPointer } from "@/components/common/Cursor";
+import { MoonIcon, SunIcon } from "@/components/common/Icons";
 
 export default function ThemeButton() {
   const { resolvedTheme, setTheme } = useTheme();

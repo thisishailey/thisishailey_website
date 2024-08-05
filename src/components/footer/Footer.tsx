@@ -1,6 +1,6 @@
 import { Nanum_Myeongjo } from 'next/font/google';
-import { cn } from '@/utils/cn';
 import { useTranslations } from 'next-intl';
+import { cn } from "@/lib/utils";
 
 const myeongjo = Nanum_Myeongjo({ weight: '400', subsets: ['latin'] });
 

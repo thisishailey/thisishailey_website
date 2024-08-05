@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CursorToNormal, CursorToPointer } from "@/components/common/cursor";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
+import { CursorToNormal, CursorToPointer } from "@/components/common/Cursor";
 
 interface LearnMoreProps {
   text: string;
@@ -34,7 +34,7 @@ export const LearnMoreButton = ({ text }: LearnMoreProps) => {
   const handleLearnMore = () => {
     document.getElementById("menu-button")?.click();
   };
-  
+
   return <HomeButton text={text} onClick={handleLearnMore} />;
 };
 

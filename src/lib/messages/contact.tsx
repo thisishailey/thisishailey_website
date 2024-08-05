@@ -1,4 +1,4 @@
-import { EmailIcon, GitHubIcon, BlogIcon } from "@/components/ui/icons";
+import { EmailIcon, GitHubIcon, BlogIcon } from "@/components/common/Icons";
 
 export const contactInfo = [
   {

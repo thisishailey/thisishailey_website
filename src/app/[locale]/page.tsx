@@ -1,13 +1,13 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import type { Params } from "@/types/param";
-import AuroraBackground from "@/components/ui/background/aurora";
-import TypewriterEffect from "@/components/ui/home/typewriterEffect";
+import type { Params } from "@/lib/types/param";
+import AuroraBackground from "@/components/background/AuroraBackground";
+import TypewriterEffect from "@/components/main/TypewriterEffect";
 import {
   DownloadCVButton,
   LearnMoreButton,
-} from "@/components/ui/home/homeButtons";
-import { cn } from "@/utils/cn";
+} from "@/components/main/ActionButton";
+import { cn } from "@/lib/utils";
 
 export default function Home({ params: { locale } }: Params) {
   unstable_setRequestLocale(locale);

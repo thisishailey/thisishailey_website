@@ -4,10 +4,10 @@ import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { CursorToNormal, CursorToPointer } from "../../common/cursor";
-import { cn } from "@/utils/cn";
-import { LocaleIcon } from "../icons";
-import type { MenuProps } from "./menu";
+import { cn } from "@/lib/utils";
+import { CursorToNormal, CursorToPointer } from "@/components/common/Cursor";
+import { LocaleIcon } from "@/components/common/Icons";
+import type { MenuProps } from "@/components/header/molecules/Menu";
 
 export default function LocaleButton({ localeValues }: MenuProps) {
   const { replace } = useRouter();

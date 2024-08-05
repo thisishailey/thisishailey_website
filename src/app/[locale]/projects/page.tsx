@@ -1,11 +1,11 @@
 import { unstable_setRequestLocale } from "next-intl/server";
-import type { Params } from "@/types/param";
 import { useTranslations } from "next-intl";
-import { cn } from "@/utils/cn";
-import Main from "@/components/common/wrapper";
-import Meteors from "@/components/ui/background/meteors";
-import BottomNavButtons from "@/components/common/bottomNav";
-import ProjectCard from "@/components/ui/project/projectCard";
+import type { Params } from "@/lib/types/param";
+import { cn } from "@/lib/utils";
+import Main from "@/components/common/Main";
+import MeteorBackground from "@/components/background/MeteorBackground";
+import BottomNavigation from "@/components/navigation/BottomNavigation";
+import ProjectCard from "@/components/project/ProjectCard";
 
 export default function Projects({ params: { locale } }: Params) {
   unstable_setRequestLocale(locale);
@@ -20,7 +20,7 @@ export default function Projects({ params: { locale } }: Params) {
 
   return (
     <>
-      <Meteors number={50} />
+      <MeteorBackground number={50} />
       <Main>
         <h2
           className={cn(
@@ -37,12 +37,14 @@ export default function Projects({ params: { locale } }: Params) {
               index={i - 1}
               title={t(`project${i}`)}
               subtitle={t(`subtitle${i}`)}
-              overview={t.rich(`overview${i}`, {b: (chunks)=> <span className="font-semibold">{chunks}</span>})}
+              overview={t.rich(`overview${i}`, {
+                b: (chunks) => <span className="font-semibold">{chunks}</span>,
+              })}
               features={t(`features${i}`)}
             />
           ))}
         </div>
-        <BottomNavButtons values={navValues} />
+        <BottomNavigation values={navValues} />
         <div className="min-h-10"></div>
       </Main>
     </>

@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { animate, stagger, useCycle } from "framer-motion";
-import LocaleButton from "./switchLocale";
-import ThemeButton from "./switchTheme";
-import MenuButton from "./menuButton";
+import LocaleButton from "@/components/header/atoms/LocaleButton";
+import ThemeButton from "@/components/header/atoms/ThemeButton";
+import MenuButton from "@/components/header/atoms/MenuButton";
 
 export interface MenuProps {
   localeValues: {

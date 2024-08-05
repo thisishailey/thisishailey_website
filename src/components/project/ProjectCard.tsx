@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { Ubuntu } from "next/font/google";
-import { projects } from "../../../../messages/projects";
-import { CursorToNormal, CursorToPointer } from "@/components/common/cursor";
-import { GitHubIcon, OpenLinkIcon } from "@/components/ui/icons";
-import ProjectCardImages from "./projectCardImages";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
+import { projects } from "@/lib/messages/projects";
+import { CursorToNormal, CursorToPointer } from "@/components/common/Cursor";
+import { GitHubIcon, OpenLinkIcon } from "@/components/common/Icons";
+import ProjectCardImages from "@/components/project/ProjectCardImages";
 
 const ubuntu = Ubuntu({
   weight: ["400", "500"],

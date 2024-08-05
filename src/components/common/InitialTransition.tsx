@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { CursorToNormal } from "./cursor";
+import { CursorToNormal } from "@/components/common/Cursor";
 
 export default function InitialTransition() {
   const [show, setShow] = useState<boolean>(true);
