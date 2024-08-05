@@ -8,7 +8,7 @@ import { loadSlim } from '@tsparticles/slim';
 
 export default function Sparkles() {
     return (
-        <div className="fixed z-[-10] w-screen h-screen overflow-hidden flex flex-col items-center justify-center">
+        <div className="fixed z-[-10] w-dvw h-dvh overflow-hidden flex flex-col items-center justify-center">
             <SparklesCore
                 minSize={0.6}
                 maxSize={1.4}

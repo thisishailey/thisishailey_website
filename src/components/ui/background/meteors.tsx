@@ -2,7 +2,7 @@ export default function Meteors({ number }: { number?: number }) {
     const meteors = new Array(number || 20).fill(true);
 
     return (
-        <div className="fixed z-[-10] w-screen h-screen overflow-hidden">
+        <div className="fixed z-[-10] w-dvw h-dvh overflow-hidden">
             {meteors.map((el, idx) => (
                 <span
                     key={'meteor' + idx}
