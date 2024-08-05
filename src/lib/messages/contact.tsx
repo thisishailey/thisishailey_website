@@ -1,4 +1,4 @@
-import { EmailIcon, GitHubIcon, BlogIcon } from "@/components/common/Icons";
+import { EmailIcon, GitHubIcon } from "@/components/common/Icons";
 
 export const contactInfo = [
   {
@@ -12,11 +12,5 @@ export const contactInfo = [
     link: "https://github.com/thisishailey",
     icon: <GitHubIcon />,
     key: "github",
-  },
-  {
-    value: "velog.io/@kfbkhw",
-    link: "https://velog.io/@kfbkhw/posts",
-    icon: <BlogIcon />,
-    key: "blog",
   },
 ];

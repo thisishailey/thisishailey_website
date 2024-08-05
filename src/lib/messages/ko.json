@@ -46,7 +46,6 @@
 	"Contact": {
 		"title": "연락처", 
 		"email": "이메일", 
-		"github": "깃허브", 
-		"blog": "블로그"
+		"github": "깃허브"
 	}
 }

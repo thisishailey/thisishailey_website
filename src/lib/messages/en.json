@@ -46,7 +46,6 @@
 	"Contact": {
 		"title": "Contact", 
 		"email": "email", 
-		"github": "github", 
-		"blog": "blog"
+		"github": "github"
 	}
 }
