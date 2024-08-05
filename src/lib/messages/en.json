@@ -28,17 +28,6 @@
 		"title": "About", 
 		"content": "Hey there! I'm a <b>front-end developer</b> based in Seoul, passionate about creating websites that are <b>easy on the eyes</b> and <b>easy to use</b>.\n\nI focus on making websites <b>user-friendly</b>, <b>fast</b>, and <b>efficient</b>. Always up for <b>learning new</b> tech and <b>collaborating</b> with others to bring <b>innovative web visions</b> to life."
 	},
-	"Skills": {
-		"title": "Skills",
-		"category1": "Front-End",
-		"category2": "Back-End",
-		"category3": "Productivity",
-		"category4": "Certificates",
-		"content1": "<s>HTML</s><s>CSS</s><s>JavaScript</s><sb>TypeScript</sb><sb>React</sb><sb>Next.js</sb><s>Vite</s><sb>Recoil</sb><s>Zustand</s><sb>Tailwind CSS</sb><sb>Material UI</sb><s>Emotion</s><s>styled-components</s><s>Bootstrap</s><s>SCSS</s>",
-		"content2": "<sb>Firebase</sb><sb>Vercel</sb><s>Netlify</s><s>MySQL</s><s>Python</s>",
-		"content3": "<sb>Git/GitHub</sb><s>Notion</s><s>Figma</s><sb>Slack</sb><sb>VS Code</sb>",
-		"content4": "<s>SQL-Developer</s><s>Information Engineer</s>"
-	},
 	"Projects": {
 		"title": "Projects",
 		"project1": "Leaflet",

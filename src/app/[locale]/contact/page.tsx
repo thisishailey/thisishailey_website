@@ -12,10 +12,10 @@ export default function Contact({ params: { locale } }: Params) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Contact");
 
-  const tSkills = useTranslations("Skills");
+  const tAbout = useTranslations("About");
   const tProjects = useTranslations("Projects");
   const navValues = [
-    { name: tSkills("title"), link: `/${locale}/skills` },
+    { name: tAbout("title"), link: `/${locale}/about` },
     { name: tProjects("title"), link: `/${locale}/projects` },
   ];
 
