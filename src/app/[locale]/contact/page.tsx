@@ -35,12 +35,14 @@ export default function Contact({ params: { locale } }: Params) {
           {contactInfo.map((info) => (
             <li
               key={info.key}
-              className="flex items-center gap-4 sm:gap-10 pt-6 sm:pt-10 first:pt-4"
+              className="flex items-center gap-3 px-4 pt-6 sm:pt-10 first:pt-4 last:pb-4"
             >
-              <span className="hidden sm:block font-medium">
-                {t(info.key).toUpperCase()}
-              </span>
-              <span className="sm:hidden">{info.icon}</span>
+              <div className="flex items-center gap-3 w-14 sm:w-40">
+                <div>{info.icon}</div>
+                <div className="hidden sm:block font-medium">
+                  {t(info.key).toUpperCase()}
+                </div>
+              </div>
               <a
                 href={info.link}
                 target="_blank"
@@ -48,7 +50,7 @@ export default function Contact({ params: { locale } }: Params) {
                 onMouseOver={CursorToPointer}
                 onMouseLeave={CursorToNormal}
               >
-                <span>{info.value}</span>
+                <div>{info.value}</div>
               </a>
             </li>
           ))}
