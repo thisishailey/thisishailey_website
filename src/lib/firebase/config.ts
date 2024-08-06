@@ -1,5 +1,4 @@
 import { type FirebaseApp, getApp, initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -22,4 +21,3 @@ try {
 
 export const app = firebaseApp;
 export const firestore = getFirestore(app);
-export const analytics = getAnalytics(app);

@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import storeMessage from "@/lib/firebase/message";
+import sendEmail from "@/lib/firebase/mail";
 import { CursorToNormal, CursorToPointer } from "@/components/common/Cursor";
 
 interface Props {
@@ -38,9 +40,9 @@ const Checkmark = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
+      strokeWidth={3}
       stroke="currentColor"
-      className="size-6"
+      className="size-7"
     >
       <motion.path
         initial={{ pathLength: 0 }}
@@ -70,8 +72,21 @@ export default function ContactForm({ locale, text }: Props) {
     }
   }, [isSent]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleMessage = async (name: string, content: string) => {
+    const { error: messageError } = await storeMessage(name, content);
+    const { error: emailError } = await sendEmail(name, content);
+
+    if (!messageError && !emailError) {
+      return true;
+    } else {
+      console.log(messageError, emailError);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const name = e.currentTarget.querySelector(
       "input#name"
@@ -82,12 +97,14 @@ export default function ContactForm({ locale, text }: Props) {
 
     if (!name.value) {
       name.focus();
+      setIsLoading(false);
     } else if (!message.value) {
       message.focus();
+      setIsLoading(false);
     } else {
-      setIsLoading(true);
-      setIsSent(true);
-      console.log(name.value, message.value);
+      const isSuccess = await handleMessage(name.value, message.value);
+      setIsSent(isSuccess);
+
       setTimeout(() => {
         setIsLoading(false);
         name.value = "";
