@@ -46,6 +46,9 @@
 	"Contact": {
 		"title": "연락처", 
 		"email": "이메일", 
-		"github": "깃허브"
+		"github": "깃허브",
+		"input": "이름",
+		"textarea": "내용을 작성해 주세요",
+		"send": "보내기"
 	}
 }

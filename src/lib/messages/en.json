@@ -46,6 +46,9 @@
 	"Contact": {
 		"title": "Contact", 
 		"email": "email", 
-		"github": "github"
+		"github": "github",
+		"input": "Your name",
+		"textarea": "Write a message",
+		"send": "Send"
 	}
 }
