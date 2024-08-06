@@ -11,7 +11,7 @@ interface Props {
 
 export default function BottomNavigation({ values }: Props) {
   return (
-    <div className="fixed bottom-20 right-1/2 translate-x-1/2 flex justify-center gap-[20dvw]">
+    <div className="fixed bottom-16 xl:bottom-20 right-1/2 translate-x-1/2 flex justify-center gap-[20dvw]">
       <LeftNavButton value={values[0]} icon={<ArrowLeftIcon />} />
       <RightNavButton value={values[1]} icon={<ArrowRightIcon />} />
     </div>
