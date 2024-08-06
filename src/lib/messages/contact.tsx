@@ -1,5 +1,12 @@
 import { EmailIcon, GitHubIcon } from "@/components/common/Icons";
 
+export interface ContactInfo {
+  key: string;
+  value: string;
+  link: string;
+  icon: React.ReactNode;
+}
+
 export const contactInfo = [
   {
     value: "haileydeveloper@gmail.com",
