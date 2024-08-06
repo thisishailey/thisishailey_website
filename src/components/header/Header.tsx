@@ -12,6 +12,7 @@ export default function Header() {
   const menuItems = [
     { text: t("about"), link: "about" },
     { text: t("project"), link: "projects" },
+    { text: t("wiki"), link: "wiki" },
     { text: t("contact"), link: "contact" },
   ];
 

@@ -9,8 +9,8 @@
 	},
 	"Header": {
 		"about": "About",
-		"skill": "Skills",
 		"project": "Projects",
+		"wiki": "Wiki",
 		"contact": "Contact"
 	},
 	"Footer": {
@@ -42,6 +42,10 @@
 		"features1": "- MUI 시스템을 이해하고, Material UI 컴포넌트를 자유롭게 활용/응용하여 커스텀 컴포넌트 구현\n- Material UI 커스텀 설정과 테마 설정을 활용해 다크 모드 및 반응형 디자인 구현\n- 사용자 경험을 고려하여 커스텀 전역 Snackbar와 로컬 Alert 컴포넌트, Loading Skeleton, Form HelperText 구현\n\n- Firebase Auth를 활용한 구글 소셜 로그인 및 이메일 로그인/회원가입 구현\n- Stepper와 Recoil, useState를 활용한 단계별 회원가입 구현 (소셜 회원가입은 2단계부터 시작하도록 구현)\n- 회원가입 시 패스워드 유효성 검사, 유저네임 유효성/중복 검사 구현\n- 사용자 편의를 위해 로그인 후 redirect 지점을 어떤 경로로 로그인에 들어왔는지 searchParams로 받아 다르게 구현\n- Context API를 활용한 로그인 상태 관리\n\n- Firebase Firestore를 활용한 DB 구축 및 async/await 함수로 CRUD 처리, query를 활용한 데이터 조회, TypeScript type 처리\n- Firebase Storage를 활용한 이미지 파일 저장 및 불러오기, uuid를 활용한 unique ID 생성\n- 게시글 작성란에 Tiptap WYSIWYG 텍스트 에디터 활용\n- Next.js Dynamic Routes를 활용한 게시글 상세 페이지 구현\n- 마이페이지에 프로필 편집 기능, 내가 쓴 글 & 리뷰 보기, 좋아요 & 북마크 한 글 보기 및 삭제 구현\n\n- 알라딘 서점 REST API를 활용한 '화제의 책', '새로 나온 책', '베스트셀러' 캐러셀 구현, Search-as-you-type 방식 도서 검색바 구현\n- 알라딘 API와 Next.js Dynamic Routes를 활용한 도서 상세 페이지 구현\n- 네이버 지역검색 API를 활용한 서점 검색, 네이버 지오코드 & 지도 API를 활용한 지도에 서점 위치 마커로 표시 및 이동 구현\n- Next.js route.ts와 .env, NextRequest와 NextResponse, TypeScript type을 활용한 REST API 통신\n\n- Vercel로 배포 및 커스텀 도메인 등록\n- Namecheap로 커스텀 도메인 & SSL certificate 구입 및 설치",
 		"features2": "- Tailwind CSS와 next-themes를 활용한 깜박임 없는 다크 모드 구현\n- Tailwind CSS를 활용한 반응형 디자인 구현\n\n- JWT와 cookies, NextRequest, NextResponse를 활용한 회원가입/로그인 구현\n- Next.js middleware.ts를 활용한 로그인 상태에 따른 redirect 구현\n- Next.js action.ts를 활용하여 회원가입, 로그인, 로그아웃 비동기 서버통신 처리\n- Zustand와 persist를 활용하여 로그인 상태 관리\n\n- Fake Store REST API를 활용해 상품 데이터 가져오기\n- SearchParams를 활용한 상품 검색\n- Next.js Dynamic Routes와 generateStaticParams를 활용한 상품 카테고리 별 페이지, 상품 상세 페이지\n- 상품 상세 페이지에 Breadcrumb 네비게이션 구현\n- Next.js Parallel Routes를 활용한 상품 리스트 정렬 기능\n\n- Zustand와 persist를 활용한 장바구니 상태 관리 (상품 추가, 삭제, 수량 변경)\n- 장바구니에 담기 클릭 시 장바구니 상태를 확인하여 이미 담긴 상품은 안내 모달 띄우기\n- 결제 페이지로 넘어갈 때, 장바구니 상품을 결제 상태 관리 store로 전달, 결제 성공 시 장바구니 비우기\n\n- Vercel로 배포 완료",
 		"features3": "- Tailwind CSS와 next-themes를 활용한 깜박임 없는 다크 모드 구현\n- 버튼, 링크에 mouseover 시 크기가 달라지는 커스텀 커서 구현 (터치 기반 디바이스로 접속 시 hidden 처리)\n- Framer Motion의 motion, animate, stagger, useCycle 등을 활용한 애니메이션 효과\n\n- next-intl을 활용한 i18n 다국어 지원 구현 (한국어, 영어)\n- Next.js middleware.ts와 Dynamic Routes, generateStaticParams, usePathname을 활용한 locale 별 페이지 생성 및 redirect 구현\n\n- Vercel로 배포 및 커스텀 도메인 등록\n- Namecheap로 커스텀 도메인 & SSL certificate 구입 및 설치"
+	},
+	"Wiki": {
+		"title": "Wiki", 
+		"description": "This is where I post front-end tips, things I learned, thoughts, troubleshooting, retrospectives, etc :)"
 	},
 	"Contact": {
 		"title": "Contact", 
