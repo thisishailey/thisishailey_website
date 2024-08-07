@@ -55,8 +55,8 @@ export default function ProjectCard(props: ProjectPreviewProps) {
   ];
 
   return (
-    <div className="max-w-6xl w-screen p-6 space-y-4 rounded bg-theme/20">
-      <div className="flex flex-col md:flex-row justify-between gap-4 pb-4 border-b-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
+    <div className="w-full p-6 space-y-4 rounded-xl bg-theme/20">
+      <div className="flex flex-col lg:flex-row justify-between gap-4 pb-4 border-b-[0.5px] border-theme-dark/50 dark:border-theme-light/50">
         <div className="flex items-center gap-14">
           <div>
             <h3 className="text-sm sm:text-lg">{subtitle}</h3>
@@ -100,7 +100,7 @@ export default function ProjectCard(props: ProjectPreviewProps) {
             <button
               key={tap.id}
               className={cn(
-                "w-28 md:w-40 p-2 rounded-full uppercase text-center text-sm sm:text-base transition-colors duration-200",
+                "w-24 sm:w-28 lg:w-40 p-2 rounded-full text-center font-medium text-sm lg:text-base transition-colors duration-200",
                 ubuntu.className,
                 currentTap === tap.id
                   ? "bg-theme/80"
