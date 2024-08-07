@@ -1,8 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import type { Params } from "@/lib/types/param";
-import { cn } from "@/lib/utils";
 import Main from "@/components/common/Main";
+import Heading from "@/components/common/Heading";
 import SparkleBackground from "@/components/background/SparkleBackground";
 import ContactList from "@/components/contact/organisms/ContactList";
 import ContactForm from "@/components/contact/organisms/ContactForm";
@@ -12,25 +12,18 @@ export default function Contact({ params: { locale } }: Params) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Contact");
 
-  const tAbout = useTranslations("About");
   const tProjects = useTranslations("Projects");
+  const tWiki = useTranslations("Wiki");
   const navValues = [
-    { name: tAbout("title"), link: `/${locale}/about` },
     { name: tProjects("title"), link: `/${locale}/projects` },
+    { name: tWiki("title"), link: `/${locale}/wiki` },
   ];
 
   return (
     <>
       <SparkleBackground />
       <Main singlePage>
-        <h2
-          className={cn(
-            "text-5xl sm:text-6xl",
-            locale === "en" ? "font-logo" : "font-cafe"
-          )}
-        >
-          {t("title")}
-        </h2>
+        <Heading text={t("title")} isEnglish={locale === "en"} />
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
           <ContactList />
           <ContactForm
@@ -43,7 +36,7 @@ export default function Contact({ params: { locale } }: Params) {
           />
         </div>
       </Main>
-      <BottomNavigation values={navValues} />
+      <BottomNavigation values={navValues} isFixed />
     </>
   );
 }

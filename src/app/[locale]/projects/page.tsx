@@ -1,8 +1,8 @@
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import type { Params } from "@/lib/types/param";
-import { cn } from "@/lib/utils";
 import Main from "@/components/common/Main";
+import Heading from "@/components/common/Heading";
 import MeteorBackground from "@/components/background/MeteorBackground";
 import BottomNavigation from "@/components/navigation/BottomNavigation";
 import ProjectCard from "@/components/project/ProjectCard";
@@ -12,25 +12,18 @@ export default function Projects({ params: { locale } }: Params) {
   const t = useTranslations("Projects");
 
   const tAbout = useTranslations("About");
-  const tContact = useTranslations("Contact");
+  const tWiki = useTranslations("Wiki");
   const navValues = [
     { name: tAbout("title"), link: `/${locale}/about` },
-    { name: tContact("title"), link: `/${locale}/contact` },
+    { name: tWiki("title"), link: `/${locale}/wiki` },
   ];
 
   return (
     <>
       <MeteorBackground number={50} />
       <Main>
-        <h2
-          className={cn(
-            "mt-14 text-5xl sm:text-6xl",
-            locale === "en" ? "font-logo" : "font-cafe"
-          )}
-        >
-          {t("title")}
-        </h2>
-        <div className="flex flex-col gap-4">
+        <Heading text={t("title")} isEnglish={locale === "en"} />
+        <div className="flex flex-col gap-4 w-[90dvw] mx-auto lg:px-20">
           {[1, 2, 3].map((i) => (
             <ProjectCard
               key={i}
@@ -44,9 +37,8 @@ export default function Projects({ params: { locale } }: Params) {
             />
           ))}
         </div>
-        <BottomNavigation values={navValues} />
-        <div className="min-h-10"></div>
       </Main>
+      <BottomNavigation values={navValues} />
     </>
   );
 }
