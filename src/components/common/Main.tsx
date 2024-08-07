@@ -17,7 +17,7 @@ export default function Main({ children, singlePage }: Props) {
       <main
         className={cn(
           "flex flex-col items-center gap-8 sm:gap-14 w-screen max-w-6xl p-4",
-          singlePage ? "h-[65dvh] overflow-y-auto" : ""
+          singlePage ? "h-[65dvh] overflow-y-scroll" : ""
         )}
       >
         {children}
